@@ -15,7 +15,7 @@
   ~ limitations under the License.
   -->
 
-<LinearLayout
+<com.lwh.popview.widget.BounceableLinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -32,6 +32,101 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:background="@color/theme_item_inside_foreground">
+
+        <RelativeLayout
+            android:id="@+id/relativelayout_logger"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:clickable="true"
+            android:layout_marginTop="0.5dp">
+            <TextView
+                android:id="@+id/textview_logger_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:layout_marginLeft="15dp"
+                android:text="Logger"
+                android:layout_centerVertical="true"/>
+            <TextView
+                android:id="@+id/textview_logger_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textColor="@color/cyan"
+                android:layout_marginLeft="15dp"
+                android:layout_toRightOf="@id/textview_logger_name"
+                android:text="企业级日志系统"
+                android:ellipsize="end"
+                android:layout_centerVertical="true"/>
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/theme_item_outside_background"
+            android:layout_marginLeft="15dp"/>
+
+        <RelativeLayout
+            android:id="@+id/relativelayout_toastutils"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:clickable="true"
+            android:layout_marginTop="0.5dp">
+            <TextView
+                android:id="@+id/textview_toastutils_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:layout_marginLeft="15dp"
+                android:text="ToastUtils"
+                android:layout_centerVertical="true"/>
+            <TextView
+                android:id="@+id/textview_toastutils_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textColor="@color/cyan"
+                android:layout_marginLeft="15dp"
+                android:layout_toRightOf="@id/textview_toastutils_name"
+                android:text="可在子线程弹出的Toast"
+                android:ellipsize="end"
+                android:layout_centerVertical="true"/>
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/theme_item_outside_background"
+            android:layout_marginLeft="15dp"/>
+        <RelativeLayout
+            android:id="@+id/relativelayout_basemodel"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:clickable="true"
+            android:layout_marginTop="0.5dp">
+            <TextView
+                android:id="@+id/textview_basemodel_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:layout_marginLeft="15dp"
+                android:text="BaseModel"
+                android:layout_centerVertical="true"/>
+            <TextView
+                android:id="@+id/textview_basemodel_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textColor="@color/cyan"
+                android:layout_marginLeft="15dp"
+                android:layout_toRightOf="@id/textview_basemodel_name"
+                android:text="强大的数据筛选器"
+                android:ellipsize="end"
+                android:layout_centerVertical="true"/>
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/theme_item_outside_background"
+            android:layout_marginLeft="15dp"/>
         <RelativeLayout
             android:id="@+id/relativelayout_ioc"
             android:layout_width="match_parent"
@@ -159,7 +254,132 @@
                 android:ellipsize="end"
                 android:layout_centerVertical="true"/>
         </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/theme_item_outside_background"
+            android:layout_marginLeft="15dp"/>
+        <RelativeLayout
+            android:id="@+id/relativelayout_textutils"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:clickable="true"
+            android:layout_marginTop="0.5dp">
+            <TextView
+                android:id="@+id/textview_textutils_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:layout_marginLeft="15dp"
+                android:text="TextUtils"
+                android:layout_centerVertical="true"/>
+            <TextView
+                android:id="@+id/textview_textutils_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textColor="@color/cyan"
+                android:layout_marginLeft="15dp"
+                android:layout_toRightOf="@id/textview_textutils_name"
+                android:text="便捷进行一些字符串等文本操作"
+                android:ellipsize="end"
+                android:layout_centerVertical="true"/>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/theme_item_outside_background"
+            android:layout_marginLeft="15dp"/>
+        <RelativeLayout
+            android:id="@+id/relativelayout_imageutils"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:clickable="true"
+            android:layout_marginTop="0.5dp">
+            <TextView
+                android:id="@+id/textview_imageutils_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:layout_marginLeft="15dp"
+                android:text="ImageUtils"
+                android:layout_centerVertical="true"/>
+            <TextView
+                android:id="@+id/textview_imageutils_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textColor="@color/cyan"
+                android:layout_marginLeft="15dp"
+                android:layout_toRightOf="@id/textview_imageutils_name"
+                android:text="圆角矩形或圆形的用户头像必备"
+                android:ellipsize="end"
+                android:layout_centerVertical="true"/>
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/theme_item_outside_background"
+            android:layout_marginLeft="15dp"/>
+
+        <RelativeLayout
+            android:id="@+id/relativelayout_ioutils"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:clickable="true"
+            android:layout_marginTop="0.5dp">
+            <TextView
+                android:id="@+id/textview_ioutils_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:layout_marginLeft="15dp"
+                android:text="IoUtils"
+                android:layout_centerVertical="true"/>
+            <TextView
+                android:id="@+id/textview_ioutils_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textColor="@color/cyan"
+                android:layout_marginLeft="15dp"
+                android:layout_toRightOf="@id/textview_ioutils_name"
+                android:text="文件操作更方便了"
+                android:ellipsize="end"
+                android:layout_centerVertical="true"/>
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/theme_item_outside_background"
+            android:layout_marginLeft="15dp"/>
+
+        <RelativeLayout
+            android:id="@+id/relativelayout_apkutils"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:clickable="true"
+            android:layout_marginTop="0.5dp">
+            <TextView
+                android:id="@+id/textview_apkutils_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:layout_marginLeft="15dp"
+                android:text="ApkUtils"
+                android:layout_centerVertical="true"/>
+            <TextView
+                android:id="@+id/textview_apkutils_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textColor="@color/cyan"
+                android:layout_marginLeft="15dp"
+                android:layout_toRightOf="@id/textview_apkutils_name"
+                android:text="可进行apk的安装、启动"
+                android:ellipsize="end"
+                android:layout_centerVertical="true"/>
+        </RelativeLayout>
     </LinearLayout>
-
-
-</LinearLayout>
+</com.lwh.popview.widget.BounceableLinearLayout>

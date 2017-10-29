@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.lwh.jackknife.demo.orm;
+package com.lwh.jackknife.demo.basemodel;
 
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -81,7 +81,7 @@ public class Mobile implements OrmTable, Parcelable {
     }
 
     @NonColumn
-    public static Parcelable.Creator CREATOR = new ClassLoaderCreator<Mobile>() {
+    public static Creator CREATOR = new ClassLoaderCreator<Mobile>() {
         @Override
         public Mobile createFromParcel(Parcel source) {
             return null;

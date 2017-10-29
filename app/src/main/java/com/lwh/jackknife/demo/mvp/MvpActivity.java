@@ -14,24 +14,23 @@
  * limitations under the License.
  */
 
-package com.lwh.jackknife.demo.baseadapter;
+package com.lwh.jackknife.demo.mvp;
 
-import android.content.Context;
-import android.support.test.InstrumentationRegistry;
-import android.support.test.runner.AndroidJUnit4;
+import com.lwh.jackknife.mvp.BaseActivity;
 
-import org.junit.Assert;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+public class MvpActivity extends BaseActivity<IMvpView, MvpPresenter> implements IMvpView {
+    @Override
+    protected MvpPresenter createPresenter() {
+        return null;
+    }
 
-@RunWith(AndroidJUnit4.class)
-public class CommonAdapterTest {
+    @Override
+    public void showLoading() {
 
-    @Test
-    public void useAppContext() throws Exception {
-        Context context = InstrumentationRegistry.getTargetContext();
-        Assert.assertEquals(true, true);
-        Assert.assertEquals(true, true);
-        Assert.assertEquals(true, true);
+    }
+
+    @Override
+    public void hideLoading() {
+
     }
 }

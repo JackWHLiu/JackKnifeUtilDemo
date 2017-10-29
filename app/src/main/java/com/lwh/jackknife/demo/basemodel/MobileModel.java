@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.lwh.jackknife.demo.orm;
+package com.lwh.jackknife.demo.basemodel;
 
 import com.lwh.jackknife.mvp.BaseModel;
 

@@ -17,25 +17,35 @@
 package com.lwh.jackknife.demo.ioc;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.view.View;
-import android.widget.RelativeLayout;
 
+import com.lwh.jackknife.demo.R;
 import com.lwh.jackknife.demo.commonadapter.CommonAdapterActivity;
+import com.lwh.jackknife.demo.mvp.MvpActivity;
+import com.lwh.jackknife.demo.orm.OrmActivity;
 
 public class MenuActivity extends com.lwh.jackknife.app.Activity {
 
-    RelativeLayout relativelayout_commonadapter;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        relativelayout_commonadapter.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MenuActivity.this, CommonAdapterActivity.class);
-                startActivity(intent);
-            }
-        });
+    @OnClick({R.id.relativelayout_ioc,
+            R.id.relativelayout_commonadapter,
+            R.id.relativelayout_mvp,
+            R.id.relativelayout_orm})
+    public void onMenuItemClick(View view) {
+        Intent intent = new Intent();
+        switch (view.getId()) {
+            case R.id.relativelayout_ioc:
+                intent.setClass(this, IocActivity.class);
+                break;
+            case R.id.relativelayout_commonadapter:
+                intent.setClass(this, CommonAdapterActivity.class);
+                break;
+            case R.id.relativelayout_mvp:
+                intent.setClass(this, MvpActivity.class);
+                break;
+            case R.id.relativelayout_orm:
+                intent.setClass(this, OrmActivity.class);
+                break;
+        }
+       startActivity(intent);
     }
 }
