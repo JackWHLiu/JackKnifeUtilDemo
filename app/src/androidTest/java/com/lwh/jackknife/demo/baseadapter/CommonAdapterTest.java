@@ -14,24 +14,24 @@
  * limitations under the License.
  */
 
-package com.lwh.jackknife.demo;
+package com.lwh.jackknife.demo.baseadapter;
 
-import android.os.Bundle;
+import android.content.Context;
+import android.support.test.InstrumentationRegistry;
+import android.support.test.runner.AndroidJUnit4;
 
-import com.lwh.jackknife.app.Activity;
-import com.lwh.jackknife.util.Logger;
+import org.junit.Assert;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 
-import java.util.List;
+@RunWith(AndroidJUnit4.class)
+public class CommonAdapterTest {
 
-public class MainActivity extends Activity {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        MobileModel model = new MobileModel(Mobile.class);
-        List<Mobile> mobiles = model.findByCondition();
-        for (Mobile m:mobiles) {
-            Logger.error(m.toString());
-        }
+    @Test
+    public void useAppContext() throws Exception {
+        Context context = InstrumentationRegistry.getTargetContext();
+        Assert.assertEquals(true, true);
+        Assert.assertEquals(true, true);
+        Assert.assertEquals(true, true);
     }
 }

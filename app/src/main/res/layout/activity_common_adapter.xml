@@ -15,9 +15,12 @@
   ~ limitations under the License.
   -->
 
-<resources>
-    <!-- 条目前景色 -->
-    <color name="theme_item_inside_foreground">#FEFEFE</color>
-    <!-- 条目外的背景色 -->
-    <color name="theme_item_outside_background">#EFEEF3</color>
-</resources>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ListView
+        android:id="@+id/listview_commonadapter"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>
