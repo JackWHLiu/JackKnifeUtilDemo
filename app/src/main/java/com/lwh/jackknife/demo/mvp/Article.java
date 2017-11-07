@@ -16,21 +16,24 @@
 
 package com.lwh.jackknife.demo.mvp;
 
-import com.lwh.jackknife.mvp.BaseActivity;
+public class Article {
 
-public class MvpActivity extends BaseActivity<IMvpView, MvpPresenter> implements IMvpView {
-    @Override
-    protected MvpPresenter createPresenter() {
-        return null;
+    private String name;
+    private String country;
+    private String author;
+
+    public Article(String name, String country, String author) {
+        this.name = name;
+        this.country = country;
+        this.author = author;
     }
 
     @Override
-    public void showLoading() {
-
-    }
-
-    @Override
-    public void hideLoading() {
-
+    public String toString() {
+        return "Article{" +
+                "name='" + name + '\'' +
+                ", country='" + country + '\'' +
+                ", author='" + author + '\'' +
+                '}';
     }
 }

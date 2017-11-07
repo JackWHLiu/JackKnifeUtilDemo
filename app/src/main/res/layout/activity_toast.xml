@@ -17,19 +17,16 @@
 
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/linearlayout_ioc_root">
-    <TextView
-        android:id="@+id/textview_ioc_count"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="0"
-        android:layout_margin="5dp"/>
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
     <Button
-        android:id="@+id/button_ioc_plus"
+        android:id="@+id/button_toast_show"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="点击"/>
+        android:text="主线程弹Toast"/>
+    <Button
+        android:id="@+id/button_toast_showinsubthread"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="子线程弹Toast"/>
 </LinearLayout>

@@ -16,17 +16,37 @@
 
 package com.lwh.jackknife.demo.ioc;
 
-import android.os.Bundle;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.lwh.jackknife.app.Activity;
 import com.lwh.jackknife.demo.R;
 import com.lwh.jackknife.ioc.ContentView;
+import com.lwh.jackknife.ioc.ViewId;
+import com.lwh.jackknife.ioc.ViewIgnore;
 
-@ContentView(R.layout.activity_ioc)
+@ContentView(R.layout.activity_ioc)//此注解可以配置，也可以不配置，参考ViewInjector#generateLayoutName()
 public class IocActivity extends Activity {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    private LinearLayout linearlayout_ioc_root;//可以使用默认的id
+
+    @ViewId(R.id.textview_ioc_count)//也可以自己指定id
+    TextView mCountTextView;
+
+    @ViewIgnore//此注解用在使用代码new出来的View
+    TextView mTipsTextView;
+
+    private int mCurrent;
+
+    @OnClick(R.id.button_ioc_plus)
+    public void plus(View view) {
+        mCountTextView.setText(++mCurrent+"");
+        mTipsTextView = new TextView(this);
+        mTipsTextView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT));
+        mTipsTextView.setText("继续点击，直到点不到我为止");
+        linearlayout_ioc_root.addView(mTipsTextView, 1);
     }
 }

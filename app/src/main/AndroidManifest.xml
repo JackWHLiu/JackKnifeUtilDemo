@@ -32,10 +32,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".utils.LoggerActivity"/>
+        <activity android:name=".utils.ToastActivity"/>
         <activity android:name=".basemodel.BaseModelActivity"/>
         <activity android:name=".ioc.IocActivity"/>
         <activity android:name=".commonadapter.CommonAdapterActivity"/>
-        <activity android:name=".mvp.MvpActivity"/>
+        <activity android:name=".mvp.ArticleActivity"/>
         <activity android:name=".orm.OrmActivity"/>
     </application>
 

@@ -19,17 +19,20 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/linearlayout_ioc_root">
+    android:layout_height="match_parent">
     <TextView
-        android:id="@+id/textview_ioc_count"
+        android:id="@+id/textview_logger_tips"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="0"
-        android:layout_margin="5dp"/>
+        android:text="日志开关:开"/>
     <Button
-        android:id="@+id/button_ioc_plus"
+        android:id="@+id/button_logger_case"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="点击"/>
+        android:text="关闭日志"/>
+    <Button
+        android:id="@+id/button_logger_print"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="输出日志"/>
 </LinearLayout>

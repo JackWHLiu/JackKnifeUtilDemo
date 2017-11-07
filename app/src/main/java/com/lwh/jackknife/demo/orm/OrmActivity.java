@@ -17,6 +17,33 @@
 package com.lwh.jackknife.demo.orm;
 
 import android.app.Activity;
+import android.os.Bundle;
+import android.widget.TextView;
+
+import com.lwh.jackknife.demo.R;
+import com.lwh.jackknife.orm.dao.DaoFactory;
+import com.lwh.jackknife.orm.dao.OrmDao;
 
 public class OrmActivity extends Activity {
+
+    TextView textview_orm_user;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_orm);
+        initViews();
+        done();
+    }
+
+    private void initViews() {
+        textview_orm_user = (TextView) findViewById(R.id.textview_orm_user);
+    }
+
+    private void done() {
+        OrmDao<User> dao = DaoFactory.getDao(User.class);
+        dao.insert(new User("Celica", 16));
+        User user = dao.selectOne();
+        textview_orm_user.setText(user.toString());
+    }
 }

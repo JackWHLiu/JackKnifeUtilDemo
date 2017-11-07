@@ -20,6 +20,7 @@ import com.lwh.jackknife.mvp.BaseModel;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 public class MobileModel extends BaseModel<Mobile> {
 
@@ -30,28 +31,41 @@ public class MobileModel extends BaseModel<Mobile> {
     @Override
     protected List<Mobile> initBeans() {
         List<Mobile> mobiles = new ArrayList<>();
-        mobiles.add(new Mobile("MI", "2S", 399));
-        mobiles.add(new Mobile("魅族", "MX6", 1799));
-        mobiles.add(new Mobile("oppo", "r11", 2999));
-        mobiles.add(new Mobile("MI", "6", 2899));
-        mobiles.add(new Mobile("魅族", "MX4", 700));
-        mobiles.add(new Mobile("MI", "MIX2", 4399));
-        mobiles.add(new Mobile("苹果", "6s", 3600));
+        mobiles.add(new Mobile(randomSerialNumber(), "MI", "2S", 399));
+        mobiles.add(new Mobile(randomSerialNumber(), "魅族", "MX6", 1799));
+        mobiles.add(new Mobile(randomSerialNumber(), "oppo", "r11", 2999));
+        mobiles.add(new Mobile(randomSerialNumber(), "MI", "6", 2899));
+        mobiles.add(new Mobile(randomSerialNumber(), "魅族", "MX4", 700));
+        mobiles.add(new Mobile(randomSerialNumber(), "MI", "MIX2", 4399));
+        mobiles.add(new Mobile(randomSerialNumber(), "苹果", "6s", 3600));
         return mobiles;
     }
 
-    public List<Mobile> findByCondition() {
+    public String randomSerialNumber() {
+        return UUID.randomUUID().toString().substring(0, 12).toUpperCase().replace("-", "");
+    }
+
+    public List<Mobile> findAll() {
+        return findObjects(null);
+    }
+
+    public List<Mobile> findWhereBrandEqualToApple() {
+        Selector selector = Selector.create().addWhereEqualTo("brand", "苹果");
+        return findObjects(selector);
+    }
+
+    public List<Mobile> findWhereBrandEqualToMiAndPriceIn1000To3000() {
         Selector selector = Selector.create()
                 .addWhereEqualTo("brand", "MI")
                 .addWhereGreatorThanOrEqualTo("price", 1000)
-                .addWhereLessThan("price", 3000);
-        try {
-            return findObjects(selector);
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (NoSuchFieldException e) {
-            e.printStackTrace();
-        }
-        return null;
+                .addWhereLessThan("price", 3000.0f);
+        return findObjects(selector);
+    }
+
+    public List<Mobile> findWhereModelNumberContainsXAndPriceGreatorThanOrEqualTo1799() {
+        Selector selector = Selector.create()
+                .addWhereContains("modelNumber", "X")
+                .addWhereGreatorThanOrEqualTo("price", 1799.0f);
+        return findObjects(selector);
     }
 }

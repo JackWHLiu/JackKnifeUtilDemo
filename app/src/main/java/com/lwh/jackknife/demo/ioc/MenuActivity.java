@@ -20,19 +20,35 @@ import android.content.Intent;
 import android.view.View;
 
 import com.lwh.jackknife.demo.R;
+import com.lwh.jackknife.demo.basemodel.BaseModelActivity;
 import com.lwh.jackknife.demo.commonadapter.CommonAdapterActivity;
-import com.lwh.jackknife.demo.mvp.MvpActivity;
+import com.lwh.jackknife.demo.mvp.ArticleActivity;
 import com.lwh.jackknife.demo.orm.OrmActivity;
+import com.lwh.jackknife.demo.utils.LoggerActivity;
+import com.lwh.jackknife.demo.utils.ToastActivity;
 
 public class MenuActivity extends com.lwh.jackknife.app.Activity {
 
-    @OnClick({R.id.relativelayout_ioc,
+    @OnClick({
+            R.id.relativelayout_logger,
+            R.id.relativelayout_toastutils,
+            R.id.relativelayout_basemodel,
+            R.id.relativelayout_ioc,
             R.id.relativelayout_commonadapter,
             R.id.relativelayout_mvp,
             R.id.relativelayout_orm})
     public void onMenuItemClick(View view) {
         Intent intent = new Intent();
         switch (view.getId()) {
+            case R.id.relativelayout_logger:
+                intent.setClass(this, LoggerActivity.class);
+                break;
+            case R.id.relativelayout_toastutils:
+                intent.setClass(this, ToastActivity.class);
+                break;
+            case R.id.relativelayout_basemodel:
+                intent.setClass(this, BaseModelActivity.class);
+                break;
             case R.id.relativelayout_ioc:
                 intent.setClass(this, IocActivity.class);
                 break;
@@ -40,7 +56,7 @@ public class MenuActivity extends com.lwh.jackknife.app.Activity {
                 intent.setClass(this, CommonAdapterActivity.class);
                 break;
             case R.id.relativelayout_mvp:
-                intent.setClass(this, MvpActivity.class);
+                intent.setClass(this, ArticleActivity.class);
                 break;
             case R.id.relativelayout_orm:
                 intent.setClass(this, OrmActivity.class);

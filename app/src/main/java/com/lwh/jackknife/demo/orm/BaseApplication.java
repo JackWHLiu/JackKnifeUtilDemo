@@ -17,6 +17,15 @@
 package com.lwh.jackknife.demo.orm;
 
 import com.lwh.jackknife.app.Application;
+import com.lwh.jackknife.orm.Orm;
+import com.lwh.jackknife.orm.table.TableManager;
 
 public class BaseApplication extends Application {
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        Orm.init(this, "ormdemo");
+        TableManager.getInstance().createTable(User.class);
+    }
 }

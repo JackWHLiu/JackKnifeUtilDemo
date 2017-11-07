@@ -18,5 +18,9 @@ package com.lwh.jackknife.demo.mvp;
 
 import com.lwh.jackknife.mvp.IBaseView;
 
-public interface IMvpView extends IBaseView {
+import java.util.List;
+
+public interface IArticleView extends IBaseView {
+
+    void showRecommendedArticles(List<Article> articles);
 }
