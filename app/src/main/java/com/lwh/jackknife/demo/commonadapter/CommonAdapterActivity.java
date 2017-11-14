@@ -49,8 +49,7 @@ public class CommonAdapterActivity extends Activity {
             }
 
             @Override
-            protected <VIEW extends View> void onBindViewHolder(int position, ViewHolder<VIEW> holder) {
-                User user = (User) getItem(position);
+            protected <VIEW extends View> void onBindViewHolder(int position, User user, ViewHolder<VIEW> holder) {
                 TextView textview_item = (TextView) holder.findViewById(R.id.textview_item);
                 ImageView imageview_item = (ImageView) holder.findViewById(R.id.imageview_item);
                 textview_item.setText(user.getNickname());

@@ -21,8 +21,14 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.lwh.jackknife.demo.R;
+import com.lwh.jackknife.orm.builder.QueryBuilder;
+import com.lwh.jackknife.orm.builder.WhereBuilder;
 import com.lwh.jackknife.orm.dao.DaoFactory;
 import com.lwh.jackknife.orm.dao.OrmDao;
+import com.lwh.jackknife.util.Logger;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class OrmActivity extends Activity {
 
@@ -43,7 +49,15 @@ public class OrmActivity extends Activity {
     private void done() {
         OrmDao<User> dao = DaoFactory.getDao(User.class);
         dao.insert(new User("Celica", 16));
+        List<User> users = new ArrayList<>();
+        users.add(new User("Alm", 17));
+        users.add(new User("Mycen", 54));
+        dao.insert(users);
+//        dao.delete(WhereBuilder.create().addWhereEqualTo("age", 54));//删除Mycen
         User user = dao.selectOne();
         textview_orm_user.setText(user.toString());
+        for (User u:dao.select(QueryBuilder.create().limit(1,2))) {
+            Logger.error(u.toString());
+        }
     }
 }

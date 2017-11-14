@@ -35,6 +35,13 @@ android {
     }
 }
 
+repositories{
+    flatDir{
+        dir 'libs'
+    }
+}
+
 dependencies {
-    compile 'com.github.JackWHLiu:jackknife:1.5.15'
+//    compile(name:'jackknife-debug',ext:'aar')
+    compile 'com.github.JackWHLiu:jackknife:1.6.4'
 }

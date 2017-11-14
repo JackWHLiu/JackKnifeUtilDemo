@@ -66,8 +66,10 @@ public class LoggerActivity extends Activity implements View.OnClickListener{
     private void refreshCase() {
         if (Logger.DEBUG) {
             textview_logger_tips.setText("日志开关:开");
+            button_logger_case.setText("关闭日志");
         } else {
             textview_logger_tips.setText("日志开关:关");
+            button_logger_case.setText("打开日志");
         }
     }
 }
