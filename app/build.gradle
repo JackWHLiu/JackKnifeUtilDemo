@@ -42,6 +42,5 @@ repositories{
 }
 
 dependencies {
-//    compile(name:'jackknife-debug',ext:'aar')
-    compile 'com.github.JackWHLiu:jackknife:1.6.4'
+    compile 'com.github.JackWHLiu:jackknife:master-SNAPSHOT'//最后提交代码的镜像
 }

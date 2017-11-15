@@ -56,7 +56,7 @@ public class OrmActivity extends Activity {
 //        dao.delete(WhereBuilder.create().addWhereEqualTo("age", 54));//删除Mycen
         User user = dao.selectOne();
         textview_orm_user.setText(user.toString());
-        for (User u:dao.select(QueryBuilder.create().limit(1,2))) {
+        for (User u:dao.select(QueryBuilder.create().limit(1,2))) {//limit传一个参数表示个数，传两个参数表示截取
             Logger.error(u.toString());
         }
     }
