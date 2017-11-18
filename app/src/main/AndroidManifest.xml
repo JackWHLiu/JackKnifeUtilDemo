@@ -24,7 +24,7 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@android:style/Theme.Light.NoTitleBar">
+        android:theme="@style/JackKnife.Theme"><!-- 使用JackKnife的主题 -->
         <activity android:name=".ioc.MenuActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -39,6 +39,7 @@
         <activity android:name=".commonadapter.CommonAdapterActivity"/>
         <activity android:name=".mvp.ArticleActivity"/>
         <activity android:name=".orm.OrmActivity"/>
+        <activity android:name=".shadeview.ShadeViewActivity"/>
     </application>
 
 </manifest>

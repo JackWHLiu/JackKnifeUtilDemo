@@ -42,5 +42,6 @@ repositories{
 }
 
 dependencies {
-    compile 'com.github.JackWHLiu:jackknife:master-SNAPSHOT'//最后提交代码的镜像
+    compile 'com.github.JackWHLiu:jackknife:2.0.1'
+    compile 'com.android.support:support-v4:23.0.0'
 }

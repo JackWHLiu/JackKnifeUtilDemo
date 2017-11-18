@@ -24,6 +24,7 @@ import com.lwh.jackknife.demo.basemodel.BaseModelActivity;
 import com.lwh.jackknife.demo.commonadapter.CommonAdapterActivity;
 import com.lwh.jackknife.demo.mvp.ArticleActivity;
 import com.lwh.jackknife.demo.orm.OrmActivity;
+import com.lwh.jackknife.demo.shadeview.ShadeViewActivity;
 import com.lwh.jackknife.demo.utils.LoggerActivity;
 import com.lwh.jackknife.demo.utils.ToastActivity;
 
@@ -36,7 +37,8 @@ public class MenuActivity extends com.lwh.jackknife.app.Activity {
             R.id.relativelayout_ioc,
             R.id.relativelayout_commonadapter,
             R.id.relativelayout_mvp,
-            R.id.relativelayout_orm})
+            R.id.relativelayout_orm,
+            R.id.relativelayout_shadeview})
     public void onMenuItemClick(View view) {
         Intent intent = new Intent();
         switch (view.getId()) {
@@ -60,6 +62,9 @@ public class MenuActivity extends com.lwh.jackknife.app.Activity {
                 break;
             case R.id.relativelayout_orm:
                 intent.setClass(this, OrmActivity.class);
+                break;
+            case R.id.relativelayout_shadeview:
+                intent.setClass(this, ShadeViewActivity.class);
                 break;
         }
        startActivity(intent);
