@@ -22,6 +22,7 @@ import android.view.View;
 import com.lwh.jackknife.demo.R;
 import com.lwh.jackknife.demo.basemodel.BaseModelActivity;
 import com.lwh.jackknife.demo.commonadapter.CommonAdapterActivity;
+import com.lwh.jackknife.demo.horizontaltabbar.HorizontalTabBarActivity;
 import com.lwh.jackknife.demo.mvp.ArticleActivity;
 import com.lwh.jackknife.demo.orm.OrmActivity;
 import com.lwh.jackknife.demo.shadeview.ShadeViewActivity;
@@ -38,7 +39,9 @@ public class MenuActivity extends com.lwh.jackknife.app.Activity {
             R.id.relativelayout_commonadapter,
             R.id.relativelayout_mvp,
             R.id.relativelayout_orm,
-            R.id.relativelayout_shadeview})
+            R.id.relativelayout_shadeview,
+            R.id.relativelayout_horizontaltabbar
+    })
     public void onMenuItemClick(View view) {
         Intent intent = new Intent();
         switch (view.getId()) {
@@ -65,6 +68,9 @@ public class MenuActivity extends com.lwh.jackknife.app.Activity {
                 break;
             case R.id.relativelayout_shadeview:
                 intent.setClass(this, ShadeViewActivity.class);
+                break;
+            case R.id.relativelayout_horizontaltabbar:
+                intent.setClass(this, HorizontalTabBarActivity.class);
                 break;
         }
        startActivity(intent);
