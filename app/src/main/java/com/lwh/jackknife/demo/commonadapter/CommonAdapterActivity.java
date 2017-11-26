@@ -27,6 +27,9 @@ import com.lwh.jackknife.demo.R;
 import com.lwh.jackknife.widget.CommonAdapter;
 import com.lwh.jackknife.widget.ViewHolder;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class CommonAdapterActivity extends Activity {
 
     ListView listview_commonadapter;
@@ -37,7 +40,7 @@ public class CommonAdapterActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_common_adapter);
         listview_commonadapter = (ListView) findViewById(R.id.listview_commonadapter);
-        mAdapter = new CommonAdapter<User>(this) {
+        listview_commonadapter.setAdapter(mAdapter = new CommonAdapter<User>(this) {
             @Override
             protected int getItemLayoutId() {
                 return R.layout.item_common_adapter;
@@ -49,18 +52,21 @@ public class CommonAdapterActivity extends Activity {
             }
 
             @Override
-            protected <VIEW extends View> void onBindViewHolder(int position, User user, ViewHolder<VIEW> holder) {
+            protected List<User> initDatas() {
+                List<User> users = new ArrayList<>();
+                users.add(new User(getResources().getDrawable(R.drawable.pikaqiu), "Jack"));
+                users.add(new User(getResources().getDrawable(R.drawable.pikaqiu), "Rose"));
+                return users;
+            }
+
+            @Override
+            protected <VIEW extends View> void onBindViewHolder(int position, User user,
+                                                                ViewHolder<VIEW> holder) {
                 TextView textview_item = (TextView) holder.findViewById(R.id.textview_item);
                 ImageView imageview_item = (ImageView) holder.findViewById(R.id.imageview_item);
                 textview_item.setText(user.getNickname());
                 imageview_item.setImageDrawable(user.getAvator());
             }
-        };
-        listview_commonadapter.setAdapter(mAdapter);
-        mAdapter.addItem(new User(getResources().getDrawable(R.drawable.pikaqiu), "Jack"));
-        mAdapter.addItem(new User(getResources().getDrawable(R.drawable.pikaqiu), "Rose"));
-        mAdapter.addItem(new User(getResources().getDrawable(R.drawable.pikaqiu), "Mary"));
-        mAdapter.addItem(new User(getResources().getDrawable(R.drawable.pikaqiu), "Elaine"));
-        mAdapter.addItem(new User(getResources().getDrawable(R.drawable.pikaqiu), "Nancy"));
+        });
     }
 }
