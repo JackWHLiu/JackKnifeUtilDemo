@@ -19,7 +19,6 @@
     package="com.lwh.jackknife.demo">
 
     <application
-        android:name=".orm.BaseApplication"
         android:theme="@style/JackKnife.Theme"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
