@@ -40,6 +40,7 @@
         <activity android:name=".orm.OrmActivity"/>
         <activity android:name=".shadeview.ShadeViewActivity"/>
         <activity android:name=".horizontaltabbar.HorizontalTabBarActivity"/>
+        <activity android:name=".multiradiogroup.MultiRadioGroupActivity"/>
     </application>
 
 </manifest>
