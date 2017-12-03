@@ -41,6 +41,7 @@
         <activity android:name=".shadeview.ShadeViewActivity"/>
         <activity android:name=".horizontaltabbar.HorizontalTabBarActivity"/>
         <activity android:name=".multiradiogroup.MultiRadioGroupActivity"/>
+        <activity android:name=".letterview.LetterViewActivity"/>
     </application>
 
 </manifest>

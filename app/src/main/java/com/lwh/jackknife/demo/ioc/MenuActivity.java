@@ -23,6 +23,7 @@ import com.lwh.jackknife.demo.R;
 import com.lwh.jackknife.demo.basemodel.BaseModelActivity;
 import com.lwh.jackknife.demo.commonadapter.CommonAdapterActivity;
 import com.lwh.jackknife.demo.horizontaltabbar.HorizontalTabBarActivity;
+import com.lwh.jackknife.demo.letterview.LetterViewActivity;
 import com.lwh.jackknife.demo.multiradiogroup.MultiRadioGroupActivity;
 import com.lwh.jackknife.demo.mvp.ArticleActivity;
 import com.lwh.jackknife.demo.orm.OrmActivity;
@@ -42,7 +43,8 @@ public class MenuActivity extends com.lwh.jackknife.app.Activity {
             R.id.relativelayout_orm,
             R.id.relativelayout_shadeview,
             R.id.relativelayout_horizontaltabbar,
-            R.id.relativelayout_multiradiogroup
+            R.id.relativelayout_multiradiogroup,
+            R.id.relativelayout_letterview
     })
     public void onMenuItemClick(View view) {
         Intent intent = new Intent();
@@ -76,6 +78,9 @@ public class MenuActivity extends com.lwh.jackknife.app.Activity {
                 break;
             case R.id.relativelayout_multiradiogroup:
                 intent.setClass(this, MultiRadioGroupActivity.class);
+                break;
+            case R.id.relativelayout_letterview:
+                intent.setClass(this, LetterViewActivity.class);
                 break;
         }
        startActivity(intent);
