@@ -42,6 +42,7 @@
         <activity android:name=".horizontaltabbar.HorizontalTabBarActivity"/>
         <activity android:name=".multiradiogroup.MultiRadioGroupActivity"/>
         <activity android:name=".letterview.LetterViewActivity"/>
+        <activity android:name=".nestedscrollinglistview.NestedScrollingListViewActivity"/>
     </application>
 
 </manifest>

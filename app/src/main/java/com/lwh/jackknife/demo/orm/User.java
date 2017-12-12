@@ -17,12 +17,12 @@
 package com.lwh.jackknife.demo.orm;
 
 import com.lwh.jackknife.orm.AssignType;
+import com.lwh.jackknife.orm.OrmTable;
 import com.lwh.jackknife.orm.annotation.Column;
 import com.lwh.jackknife.orm.annotation.NotNull;
 import com.lwh.jackknife.orm.annotation.PrimaryKey;
 import com.lwh.jackknife.orm.annotation.Table;
 import com.lwh.jackknife.orm.annotation.Unique;
-import com.lwh.jackknife.orm.table.OrmTable;
 
 @Table("user")
 public class User implements OrmTable {

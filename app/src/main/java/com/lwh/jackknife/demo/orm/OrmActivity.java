@@ -23,6 +23,7 @@ import android.widget.TextView;
 import com.lwh.jackknife.demo.R;
 import com.lwh.jackknife.orm.Orm;
 import com.lwh.jackknife.orm.OrmConfig;
+import com.lwh.jackknife.orm.TableManager;
 import com.lwh.jackknife.orm.builder.QueryBuilder;
 import com.lwh.jackknife.orm.builder.WhereBuilder;
 import com.lwh.jackknife.orm.dao.DaoFactory;
@@ -53,9 +54,9 @@ public class OrmActivity extends Activity {
         OrmConfig config = new OrmConfig.Builder()
                 .database("ormdemo")//数据库名称
                 .version(1)//数据库版本号，默认1，只能升不能降
-                .tables(new Class[] {User.class})//要初始化的表
                 .build();
         Orm.init(this, config);
+        TableManager.getInstance().createTable(User.class);//创表
         //---------- 强烈建议这段代码写在Application（结束）----------
         OrmDao<User> dao = DaoFactory.getDao(User.class);
         dao.insert(new User("Celica", 16));

@@ -42,7 +42,6 @@ repositories{
 }
 
 dependencies {
-//    compile(name:'jackknife-debug', ext:'aar')
-    compile 'com.github.JackWHLiu:jackknife:2.0.20'
+    compile 'com.github.JackWHLiu:jackknife:2.1.0'
     compile 'com.android.support:support-v4:23.0.0'
 }
