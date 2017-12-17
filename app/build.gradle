@@ -35,13 +35,14 @@ android {
     }
 }
 
-repositories{
+repositories {
     flatDir{
         dir 'libs'
     }
 }
 
 dependencies {
-    compile 'com.github.JackWHLiu:jackknife:2.1.0'
+//    compile(name:'jackknife-debug', ext:'aar')
+    compile 'com.github.JackWHLiu:jackknife:2.1.1'
     compile 'com.android.support:support-v4:23.0.0'
 }
