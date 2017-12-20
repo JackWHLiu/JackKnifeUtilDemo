@@ -18,6 +18,7 @@ package com.lwh.jackknife.demo.radarview;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 
 import com.lwh.jackknife.demo.R;
@@ -32,6 +33,18 @@ public class RadarViewActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_radar_view);
         radarview = (RadarView) findViewById(R.id.radarview);
-        radarview.start();
+        radarview.start();//启动扫描
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                radarview.stop();
+            }
+        }, 1500);
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                radarview.start();
+            }
+        }, 3000);
     }
 }
