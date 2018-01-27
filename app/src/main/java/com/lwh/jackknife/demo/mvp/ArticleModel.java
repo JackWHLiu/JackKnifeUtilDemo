@@ -23,24 +23,8 @@ import java.util.List;
 
 public class ArticleModel extends BaseModel<Article> {
 
-    public ArticleModel(Class<Article> articleClass) {
-        super(articleClass);
-    }
-
-    @Override
-    protected List<Article> initBeans() {
-        List<Article> articles = new ArrayList<>();
-        articles.add(new Article("《三个火枪手》", "法国", "大仲马"));
-        articles.add(new Article("《钢铁是怎样炼成的》", "前苏联", "奥斯特洛夫斯基"));
-        articles.add(new Article("《呐喊》", "中国", "鲁迅"));
-        articles.add(new Article("《巴黎圣母院》", "法国", "维克多·雨果"));
-        articles.add(new Article("《老人与海》", "美国", "海明威"));
-        articles.add(new Article("《鲁滨孙漂流记》", "英国", "丹尼尔·笛福"));
-        articles.add(new Article("《子夜》", "中国", "茅盾"));
-        articles.add(new Article("《雷雨》", "中国", "曹禺"));
-        articles.add(new Article("《骆驼祥子》", "中国", "老舍"));
-        articles.add(new Article("《窦娥冤》", "中国<元>", "关汉卿"));
-        return articles;
+    public ArticleModel() {
+        super(Article.class);
     }
 
     public void loadArticles(OnLoadListener<Article> listener) {

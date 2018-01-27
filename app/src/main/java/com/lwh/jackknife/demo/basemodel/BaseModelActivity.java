@@ -22,7 +22,9 @@ import android.widget.TextView;
 
 import com.lwh.jackknife.demo.R;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 public class BaseModelActivity extends Activity {
 
@@ -46,16 +48,29 @@ public class BaseModelActivity extends Activity {
         textview_basemodel_resultfour = (TextView) findViewById(R.id.textview_basemodel_resultfour);
     }
 
+    public String randomSerialNumber() {
+        return UUID.randomUUID().toString().substring(0, 12).toUpperCase().replace("-", "");
+    }
+
     private void done() {
-        MobileModel model = new MobileModel(Mobile.class);
-        List<Mobile> mobiles = model.findAll();
-        textview_basemodel_resultone.setText("查询全部结果:\n----------\n"+printResult(mobiles));
-        mobiles = model.findWhereBrandEqualToApple();
-        textview_basemodel_resulttwo.setText("查询所有苹果手机:\n----------\n"+formatResult(mobiles));
-        mobiles = model.findWhereBrandEqualToMiAndPriceIn1000To3000();
-        textview_basemodel_resultthree.setText("查询价格在[1000,3000)的小米手机:\n----------\n"+formatResult(mobiles));
-        mobiles = model.findWhereModelNumberContainsXAndPriceGreatorThanOrEqualTo1799();
-        textview_basemodel_resultfour.setText("价格大于1799.0元型号包含X的手机:\n----------\n"+formatResult(mobiles));
+        MobileModel model = new MobileModel();
+        List<Mobile> mobiles = new ArrayList<>();
+        mobiles.add(new Mobile(randomSerialNumber(), "MI", "2S", 399));
+        mobiles.add(new Mobile(randomSerialNumber(), "魅族", "MX6", 1799));
+        mobiles.add(new Mobile(randomSerialNumber(), "oppo", "r11", 2999));
+        mobiles.add(new Mobile(randomSerialNumber(), "MI", "6", 2899));
+        mobiles.add(new Mobile(randomSerialNumber(), "魅族", "MX4", 700));
+        mobiles.add(new Mobile(randomSerialNumber(), "MI", "MIX2", 4399));
+        mobiles.add(new Mobile(randomSerialNumber(), "苹果", "6s", 3600));
+        model.add(mobiles);
+        List<Mobile> mobiles2 = model.findAll();
+        textview_basemodel_resultone.setText("查询全部结果:\n----------\n"+printResult(mobiles2));
+        mobiles2 = model.findWhereBrandEqualToApple();
+        textview_basemodel_resulttwo.setText("查询所有苹果手机:\n----------\n"+formatResult(mobiles2));
+        mobiles2 = model.findWhereBrandEqualToMiAndPriceIn1000To3000();
+        textview_basemodel_resultthree.setText("查询价格在[1000,3000)的小米手机:\n----------\n"+formatResult(mobiles2));
+        mobiles2 = model.findWhereModelNumberContainsXAndPriceGreatorThanOrEqualTo1799();
+        textview_basemodel_resultfour.setText("价格大于1799.0元型号包含X的手机:\n----------\n"+formatResult(mobiles2));
     }
 
     private String printResult(List<Mobile> mobiles) {

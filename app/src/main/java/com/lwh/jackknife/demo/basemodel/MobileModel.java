@@ -24,26 +24,10 @@ import java.util.UUID;
 
 public class MobileModel extends BaseModel<Mobile> {
 
-    public MobileModel(Class<Mobile> mobileClass) {
-        super(mobileClass);
+    public MobileModel() {
+        super(Mobile.class);
     }
 
-    @Override
-    protected List<Mobile> initBeans() {
-        List<Mobile> mobiles = new ArrayList<>();
-        mobiles.add(new Mobile(randomSerialNumber(), "MI", "2S", 399));
-        mobiles.add(new Mobile(randomSerialNumber(), "魅族", "MX6", 1799));
-        mobiles.add(new Mobile(randomSerialNumber(), "oppo", "r11", 2999));
-        mobiles.add(new Mobile(randomSerialNumber(), "MI", "6", 2899));
-        mobiles.add(new Mobile(randomSerialNumber(), "魅族", "MX4", 700));
-        mobiles.add(new Mobile(randomSerialNumber(), "MI", "MIX2", 4399));
-        mobiles.add(new Mobile(randomSerialNumber(), "苹果", "6s", 3600));
-        return mobiles;
-    }
-
-    public String randomSerialNumber() {
-        return UUID.randomUUID().toString().substring(0, 12).toUpperCase().replace("-", "");
-    }
 
     public List<Mobile> findAll() {
         return findObjects(null);
