@@ -22,6 +22,7 @@ import android.view.View;
 import com.lwh.jackknife.demo.R;
 import com.lwh.jackknife.demo.basemodel.BaseModelActivity;
 import com.lwh.jackknife.demo.commonadapter.CommonAdapterActivity;
+import com.lwh.jackknife.demo.flowlayout.FlowLayoutActivity;
 import com.lwh.jackknife.demo.horizontaltabbar.HorizontalTabBarActivity;
 import com.lwh.jackknife.demo.letterview.LetterViewActivity;
 import com.lwh.jackknife.demo.multiradiogroup.MultiRadioGroupActivity;
@@ -48,7 +49,8 @@ public class MenuActivity extends com.lwh.jackknife.app.Activity {
             R.id.relativelayout_multiradiogroup,
             R.id.relativelayout_letterview,
             R.id.relativelayout_nestedscrollinglistview,
-            R.id.relativelayout_radarview
+            R.id.relativelayout_radarview,
+            R.id.relativelayout_flowlayout
     })
     public void onMenuItemClick(View view) {
         Intent intent = new Intent();
@@ -91,6 +93,9 @@ public class MenuActivity extends com.lwh.jackknife.app.Activity {
                 break;
             case R.id.relativelayout_radarview:
                 intent.setClass(this, RadarViewActivity.class);
+                break;
+            case R.id.relativelayout_flowlayout:
+                intent.setClass(this, FlowLayoutActivity.class);
                 break;
         }
         startActivity(intent);

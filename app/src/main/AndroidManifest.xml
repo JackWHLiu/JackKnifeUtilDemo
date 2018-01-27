@@ -44,6 +44,7 @@
         <activity android:name=".letterview.LetterViewActivity"/>
         <activity android:name=".nestedscrollinglistview.NestedScrollingListViewActivity"/>
         <activity android:name=".radarview.RadarViewActivity"/>
+        <activity android:name=".flowlayout.FlowLayoutActivity"/>
     </application>
 
 </manifest>

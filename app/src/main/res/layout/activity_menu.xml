@@ -580,6 +580,37 @@
                     android:ellipsize="end"
                     android:layout_centerVertical="true"/>
             </RelativeLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/theme_item_outside_background"
+                android:layout_marginLeft="15dp"/>
+            <RelativeLayout
+                android:id="@+id/relativelayout_flowlayout"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:clickable="true"
+                android:layout_marginTop="0.5dp">
+                <TextView
+                    android:id="@+id/textview_flowlayout_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:layout_marginLeft="15dp"
+                    android:text="FlowLayout"
+                    android:layout_centerVertical="true"/>
+                <TextView
+                    android:id="@+id/textview_flowlayout_detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:textColor="@color/cyan"
+                    android:layout_marginLeft="15dp"
+                    android:layout_toRightOf="@id/textview_flowlayout_name"
+                    android:text="流式布局"
+                    android:ellipsize="end"
+                    android:layout_centerVertical="true"/>
+            </RelativeLayout>
         </LinearLayout>
     </LinearLayout>
 </ScrollView>
