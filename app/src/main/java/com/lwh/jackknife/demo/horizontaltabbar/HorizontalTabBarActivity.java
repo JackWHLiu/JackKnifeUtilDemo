@@ -22,12 +22,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.util.TypedValue;
 import android.view.View;
 
 import com.lwh.jackknife.demo.R;
-import com.lwh.jackknife.util.DensityUtils;
-import com.lwh.jackknife.util.ImageUtils;
 import com.lwh.jackknife.widget.HorizontalTabBar;
 
 import java.util.ArrayList;

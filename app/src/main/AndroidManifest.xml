@@ -45,6 +45,9 @@
         <activity android:name=".nestedscrollinglistview.NestedScrollingListViewActivity"/>
         <activity android:name=".radarview.RadarViewActivity"/>
         <activity android:name=".flowlayout.FlowLayoutActivity"/>
+        <activity android:name=".clearedittext.ClearEditTextActivity"/>
+        <activity android:name=".highlighttextview.HighlightTextViewActivity"/>
+        <activity android:name=".macedittext.MacEditTextActivity"/>
     </application>
 
 </manifest>

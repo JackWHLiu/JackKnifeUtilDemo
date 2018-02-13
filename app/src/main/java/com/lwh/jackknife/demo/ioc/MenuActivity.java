@@ -21,10 +21,13 @@ import android.view.View;
 
 import com.lwh.jackknife.demo.R;
 import com.lwh.jackknife.demo.basemodel.BaseModelActivity;
+import com.lwh.jackknife.demo.clearedittext.ClearEditTextActivity;
 import com.lwh.jackknife.demo.commonadapter.CommonAdapterActivity;
 import com.lwh.jackknife.demo.flowlayout.FlowLayoutActivity;
+import com.lwh.jackknife.demo.highlighttextview.HighlightTextViewActivity;
 import com.lwh.jackknife.demo.horizontaltabbar.HorizontalTabBarActivity;
 import com.lwh.jackknife.demo.letterview.LetterViewActivity;
+import com.lwh.jackknife.demo.macedittext.MacEditTextActivity;
 import com.lwh.jackknife.demo.multiradiogroup.MultiRadioGroupActivity;
 import com.lwh.jackknife.demo.mvp.ArticleActivity;
 import com.lwh.jackknife.demo.nestedscrollinglistview.NestedScrollingListViewActivity;
@@ -50,7 +53,10 @@ public class MenuActivity extends com.lwh.jackknife.app.Activity {
             R.id.relativelayout_letterview,
             R.id.relativelayout_nestedscrollinglistview,
             R.id.relativelayout_radarview,
-            R.id.relativelayout_flowlayout
+            R.id.relativelayout_flowlayout,
+            R.id.relativelayout_clearedittext,
+            R.id.relativelayout_highlighttextview,
+            R.id.relativelayout_macedittext
     })
     public void onMenuItemClick(View view) {
         Intent intent = new Intent();
@@ -96,6 +102,15 @@ public class MenuActivity extends com.lwh.jackknife.app.Activity {
                 break;
             case R.id.relativelayout_flowlayout:
                 intent.setClass(this, FlowLayoutActivity.class);
+                break;
+            case R.id.relativelayout_clearedittext:
+                intent.setClass(this, ClearEditTextActivity.class);
+                break;
+            case R.id.relativelayout_highlighttextview:
+                intent.setClass(this, HighlightTextViewActivity.class);
+                break;
+            case R.id.relativelayout_macedittext:
+                intent.setClass(this, MacEditTextActivity.class);
                 break;
         }
         startActivity(intent);
