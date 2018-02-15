@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2018. The JackKnife Open Source Project
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<com.lwh.jackknife.widget.AnimatorScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:jackknife="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    jackknife:animatorscrollview_firstMatchHeight="true">
+    <com.lwh.jackknife.widget.AnimatorLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/textview_animator_1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            android:textColor="@android:color/black"
+            android:textSize="25sp"
+            android:padding="25dp"
+            android:gravity="center"
+            android:fontFamily="serif"
+            android:text="这是一个动画框架，向上滑动屏幕试试" />
+        <View
+            android:id="@+id/view_animator_2"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            jackknife:animatorviewwrapper_alpha="false"
+            jackknife:animatorviewwrapper_fromColor="@color/red"
+            jackknife:animatorviewwrapper_toColor="@color/orange"
+            jackknife:animatorviewwrapper_translation="fromLeft"/>
+        <View
+            android:id="@+id/view_animator_3"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            jackknife:animatorviewwrapper_alpha="true"
+            jackknife:animatorviewwrapper_fromColor="@color/yellow"
+            jackknife:animatorviewwrapper_toColor="@color/green"
+            jackknife:animatorviewwrapper_scaleX="true"
+            jackknife:animatorviewwrapper_scaleY="true"/>
+        <View
+            android:id="@+id/view_animator_4"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            jackknife:animatorviewwrapper_alpha="true"
+            jackknife:animatorviewwrapper_translation="fromLeft"
+            android:background="@color/chocolate"/>
+        <View
+            android:id="@+id/view_animator_5"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            jackknife:animatorviewwrapper_scaleY="true"
+            jackknife:animatorviewwrapper_alpha="true"
+            jackknife:animatorviewwrapper_fromColor="@color/deep_pink"
+            jackknife:animatorviewwrapper_toColor="@color/gold"/>
+        <ImageView
+            android:id="@+id/imageview_animator_6"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/baggage"
+            jackknife:animatorviewwrapper_alpha="true"
+            jackknife:animatorviewwrapper_translation="fromLeft"/>
+        <ImageView
+            android:id="@+id/imageview_animator_7"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/camera"
+            jackknife:animatorviewwrapper_fromColor="@color/gold"
+            jackknife:animatorviewwrapper_toColor="@color/fire_brick"
+            jackknife:animatorviewwrapper_alpha="true"
+            jackknife:animatorviewwrapper_translation="fromLeft|fromBottom"/>
+        <ImageView
+            android:id="@+id/imageview_animator_8"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/sweet"
+            jackknife:animatorviewwrapper_fromColor="@color/azure"
+            jackknife:animatorviewwrapper_toColor="@color/turquoise"
+            jackknife:animatorviewwrapper_alpha="true"
+            jackknife:animatorviewwrapper_translation="fromRight|fromTop"/>
+        <ImageView
+            android:id="@+id/imageview_animator_9"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/shoes"
+            jackknife:animatorviewwrapper_fromColor="@color/green"
+            jackknife:animatorviewwrapper_toColor="@color/black"
+            jackknife:animatorviewwrapper_alpha="true"
+            jackknife:animatorviewwrapper_translation="fromRight|fromTop"/>
+        <ImageView
+            android:id="@+id/imageview_animator_10"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/pikaqiu"
+            jackknife:animatorviewwrapper_fromColor="@color/alice_blue"
+            jackknife:animatorviewwrapper_toColor="@color/tomato"
+            jackknife:animatorviewwrapper_alpha="false"
+            jackknife:animatorviewwrapper_scaleX="true"
+            jackknife:animatorviewwrapper_scaleY="true"
+            jackknife:animatorviewwrapper_translation="fromRight|fromBottom"/>
+    </com.lwh.jackknife.widget.AnimatorLinearLayout>
+</com.lwh.jackknife.widget.AnimatorScrollView>

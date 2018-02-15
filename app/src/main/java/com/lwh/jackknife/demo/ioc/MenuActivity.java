@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017. The JackKnife Open Source Project
+ * Copyright (C) 2018. The JackKnife Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,6 +20,7 @@ import android.content.Intent;
 import android.view.View;
 
 import com.lwh.jackknife.demo.R;
+import com.lwh.jackknife.demo.animatorscrollview.AnimatorScrollViewActivity;
 import com.lwh.jackknife.demo.basemodel.BaseModelActivity;
 import com.lwh.jackknife.demo.clearedittext.ClearEditTextActivity;
 import com.lwh.jackknife.demo.commonadapter.CommonAdapterActivity;
@@ -56,7 +57,8 @@ public class MenuActivity extends com.lwh.jackknife.app.Activity {
             R.id.relativelayout_flowlayout,
             R.id.relativelayout_clearedittext,
             R.id.relativelayout_highlighttextview,
-            R.id.relativelayout_macedittext
+            R.id.relativelayout_macedittext,
+            R.id.relativelayout_animatorscrollview
     })
     public void onMenuItemClick(View view) {
         Intent intent = new Intent();
@@ -111,6 +113,9 @@ public class MenuActivity extends com.lwh.jackknife.app.Activity {
                 break;
             case R.id.relativelayout_macedittext:
                 intent.setClass(this, MacEditTextActivity.class);
+                break;
+            case R.id.relativelayout_animatorscrollview:
+                intent.setClass(this, AnimatorScrollViewActivity.class);
                 break;
         }
         startActivity(intent);

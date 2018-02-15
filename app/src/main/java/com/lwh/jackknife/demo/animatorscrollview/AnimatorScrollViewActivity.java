@@ -14,27 +14,19 @@
  * limitations under the License.
  */
 
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
+package com.lwh.jackknife.demo.animatorscrollview;
 
-buildscript {
-    repositories {
-        jcenter()
+import android.app.Activity;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+
+import com.lwh.jackknife.demo.R;
+
+public class AnimatorScrollViewActivity extends Activity {
+
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_animator_scroll_view);
     }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.1'
-
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
-    }
-}
-
-allprojects {
-    repositories {
-        jcenter()
-        maven { url 'https://jitpack.io' }
-    }
-}
-
-task clean(type: Delete) {
-    delete rootProject.buildDir
 }

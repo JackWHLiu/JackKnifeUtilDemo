@@ -23,7 +23,7 @@
     android:layout_height="match_parent">
     <com.lwh.jackknife.widget.MacEditTextGroup
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
         jackknife:autoedittextgroup_sectionTextSize="15sp"
         jackknife:autoedittextgroup_semicolonTextSize="12sp"
         android:gravity="center"/>
