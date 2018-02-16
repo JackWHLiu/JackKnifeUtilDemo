@@ -31,9 +31,9 @@ import com.lwh.jackknife.widget.ShadeView;
 
 public class ShadeViewActivity extends FragmentActivity implements ViewPager.OnPageChangeListener,
 		View.OnClickListener {
-	
-	private List<TabFragment> tabFragments;
 
+
+	private List<TabFragment> tabFragments;
 	private List<ShadeView> tabIndicators;
 
 	private ViewPager viewPager;

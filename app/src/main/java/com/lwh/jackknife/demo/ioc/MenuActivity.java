@@ -22,6 +22,7 @@ import android.view.View;
 import com.lwh.jackknife.demo.R;
 import com.lwh.jackknife.demo.animatorscrollview.AnimatorScrollViewActivity;
 import com.lwh.jackknife.demo.basemodel.BaseModelActivity;
+import com.lwh.jackknife.demo.bottomnavigationbar.BottomNavigationBarActivity;
 import com.lwh.jackknife.demo.clearedittext.ClearEditTextActivity;
 import com.lwh.jackknife.demo.commonadapter.CommonAdapterActivity;
 import com.lwh.jackknife.demo.flowlayout.FlowLayoutActivity;
@@ -58,7 +59,8 @@ public class MenuActivity extends com.lwh.jackknife.app.Activity {
             R.id.relativelayout_clearedittext,
             R.id.relativelayout_highlighttextview,
             R.id.relativelayout_macedittext,
-            R.id.relativelayout_animatorscrollview
+            R.id.relativelayout_animatorscrollview,
+            R.id.relativelayout_bottomnavigationbar
     })
     public void onMenuItemClick(View view) {
         Intent intent = new Intent();
@@ -116,6 +118,9 @@ public class MenuActivity extends com.lwh.jackknife.app.Activity {
                 break;
             case R.id.relativelayout_animatorscrollview:
                 intent.setClass(this, AnimatorScrollViewActivity.class);
+                break;
+            case R.id.relativelayout_bottomnavigationbar:
+                intent.setClass(this, BottomNavigationBarActivity.class);
                 break;
         }
         startActivity(intent);
