@@ -31,7 +31,7 @@ import com.lwh.jackknife.widget.BottomNavigationBar;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BottomNavigationBarActivity extends FragmentActivity implements ViewPager.OnPageChangeListener {
+public class BottomNavigationBarActivity extends FragmentActivity {
 
     private BottomNavigationBar mBottomNavigationBar;//底部导航栏，可点击切换 或 点击切换+滑动颜色渐变
     private ViewPager mViewPager;//滑动页，可以换成单纯的Fragment集合
@@ -84,19 +84,6 @@ public class BottomNavigationBarActivity extends FragmentActivity implements Vie
             }
         };
         mViewPager.setAdapter(adapter);
-        mViewPager.setOnPageChangeListener(this);
-    }
-
-    @Override
-    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-        mBottomNavigationBar.onShadeChanged(position, positionOffset);
-    }
-
-    @Override
-    public void onPageSelected(int position) {
-    }
-
-    @Override
-    public void onPageScrollStateChanged(int state) {
+        mViewPager.setOnPageChangeListener(new ShadeAdapter(mBottomNavigationBar));
     }
 }
