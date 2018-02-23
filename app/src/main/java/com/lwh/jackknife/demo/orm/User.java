@@ -40,9 +40,6 @@ public class User implements OrmTable {
     @Column("age")
     private int age;
 
-    public User() {//必须保留public的无参构造函数
-    }
-
     public User(String name, int age) {
         this.name = name;
         this.age = age;

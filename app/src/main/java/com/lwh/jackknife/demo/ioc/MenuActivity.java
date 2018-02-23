@@ -28,6 +28,7 @@ import com.lwh.jackknife.demo.commonadapter.CommonAdapterActivity;
 import com.lwh.jackknife.demo.flowlayout.FlowLayoutActivity;
 import com.lwh.jackknife.demo.highlighttextview.HighlightTextViewActivity;
 import com.lwh.jackknife.demo.horizontaltabbar.HorizontalTabBarActivity;
+import com.lwh.jackknife.demo.instrumentview.InstrumentViewActivity;
 import com.lwh.jackknife.demo.letterview.LetterViewActivity;
 import com.lwh.jackknife.demo.macedittext.MacEditTextActivity;
 import com.lwh.jackknife.demo.multiradiogroup.MultiRadioGroupActivity;
@@ -60,7 +61,8 @@ public class MenuActivity extends com.lwh.jackknife.app.Activity {
             R.id.relativelayout_highlighttextview,
             R.id.relativelayout_macedittext,
             R.id.relativelayout_animatorscrollview,
-            R.id.relativelayout_bottomnavigationbar
+            R.id.relativelayout_bottomnavigationbar,
+            R.id.relativelayout_instrumentview
     })
     public void onMenuItemClick(View view) {
         Intent intent = new Intent();
@@ -121,6 +123,9 @@ public class MenuActivity extends com.lwh.jackknife.app.Activity {
                 break;
             case R.id.relativelayout_bottomnavigationbar:
                 intent.setClass(this, BottomNavigationBarActivity.class);
+                break;
+            case R.id.relativelayout_instrumentview:
+                intent.setClass(this, InstrumentViewActivity.class);
                 break;
         }
         startActivity(intent);

@@ -50,6 +50,7 @@
         <activity android:name=".macedittext.MacEditTextActivity"/>
         <activity android:name=".animatorscrollview.AnimatorScrollViewActivity"/>
         <activity android:name=".bottomnavigationbar.BottomNavigationBarActivity"/>
+        <activity android:name=".instrumentview.InstrumentViewActivity"/>
     </application>
 
 </manifest>

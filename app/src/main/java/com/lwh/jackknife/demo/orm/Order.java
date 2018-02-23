@@ -48,9 +48,6 @@ public class Order implements OrmTable {
     @Column("money")
     private double money;
 
-    public Order() {
-    }
-
     public Order(String orderId, int userId, double money) {
         this.orderId = orderId;
         this.userId = userId;
