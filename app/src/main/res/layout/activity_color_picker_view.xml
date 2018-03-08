@@ -17,11 +17,10 @@
 
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <com.lwh.jackknife.widget.ClearEditText
+    <com.lwh.jackknife.widget.ColorPickerView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="这是可清空内容的文本框"
-        android:padding="5dp"/>
+        android:layout_height="300dp" />
 </LinearLayout>

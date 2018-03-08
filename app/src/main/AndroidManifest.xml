@@ -51,6 +51,10 @@
         <activity android:name=".animatorscrollview.AnimatorScrollViewActivity"/>
         <activity android:name=".bottomnavigationbar.BottomNavigationBarActivity"/>
         <activity android:name=".instrumentview.InstrumentViewActivity"/>
+        <activity android:name=".serialnumberedittext.SerialNumberEditTextActivity"/>
+        <activity android:name=".verifycodeedittext.VerifyCodeEditTextActivity"/>
+        <activity android:name=".titlebar.TitleBarActivity"/>
+        <activity android:name=".colorpickerview.ColorPickerViewActivity"/>
     </application>
 
 </manifest>

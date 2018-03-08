@@ -24,6 +24,7 @@ import com.lwh.jackknife.demo.animatorscrollview.AnimatorScrollViewActivity;
 import com.lwh.jackknife.demo.basemodel.BaseModelActivity;
 import com.lwh.jackknife.demo.bottomnavigationbar.BottomNavigationBarActivity;
 import com.lwh.jackknife.demo.clearedittext.ClearEditTextActivity;
+import com.lwh.jackknife.demo.colorpickerview.ColorPickerViewActivity;
 import com.lwh.jackknife.demo.commonadapter.CommonAdapterActivity;
 import com.lwh.jackknife.demo.flowlayout.FlowLayoutActivity;
 import com.lwh.jackknife.demo.highlighttextview.HighlightTextViewActivity;
@@ -36,9 +37,12 @@ import com.lwh.jackknife.demo.mvp.ArticleActivity;
 import com.lwh.jackknife.demo.nestedscrollinglistview.NestedScrollingListViewActivity;
 import com.lwh.jackknife.demo.orm.OrmActivity;
 import com.lwh.jackknife.demo.radarview.RadarViewActivity;
+import com.lwh.jackknife.demo.serialnumberedittext.SerialNumberEditTextActivity;
 import com.lwh.jackknife.demo.shadeview.ShadeViewActivity;
+import com.lwh.jackknife.demo.titlebar.TitleBarActivity;
 import com.lwh.jackknife.demo.utils.LoggerActivity;
 import com.lwh.jackknife.demo.utils.ToastActivity;
+import com.lwh.jackknife.demo.verifycodeedittext.VerifyCodeEditTextActivity;
 
 public class MenuActivity extends com.lwh.jackknife.app.Activity {
 
@@ -62,7 +66,11 @@ public class MenuActivity extends com.lwh.jackknife.app.Activity {
             R.id.relativelayout_macedittext,
             R.id.relativelayout_animatorscrollview,
             R.id.relativelayout_bottomnavigationbar,
-            R.id.relativelayout_instrumentview
+            R.id.relativelayout_instrumentview,
+            R.id.relativelayout_serialnumberedittext,
+            R.id.relativelayout_verifycodeedittext,
+            R.id.relativelayout_titlebar,
+            R.id.relativelayout_colorpickerview
     })
     public void onMenuItemClick(View view) {
         Intent intent = new Intent();
@@ -126,6 +134,18 @@ public class MenuActivity extends com.lwh.jackknife.app.Activity {
                 break;
             case R.id.relativelayout_instrumentview:
                 intent.setClass(this, InstrumentViewActivity.class);
+                break;
+            case R.id.relativelayout_serialnumberedittext:
+                intent.setClass(this, SerialNumberEditTextActivity.class);
+                break;
+            case R.id.relativelayout_verifycodeedittext:
+                intent.setClass(this, VerifyCodeEditTextActivity.class);
+                break;
+            case R.id.relativelayout_titlebar:
+                intent.setClass(this, TitleBarActivity.class);
+                break;
+            case R.id.relativelayout_colorpickerview:
+                intent.setClass(this, ColorPickerViewActivity.class);
                 break;
         }
         startActivity(intent);

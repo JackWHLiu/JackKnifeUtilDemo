@@ -17,11 +17,17 @@
 
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:jackknife="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <com.lwh.jackknife.widget.ClearEditText
+    <com.lwh.jackknife.widget.VerifyCodeEditTextGroup
+        android:id="@+id/verifyCodeView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="这是可清空内容的文本框"
-        android:padding="5dp"/>
+        jackknife:autoedittextgroup_sectionTextSize="15sp"
+        jackknife:autoedittextgroup_semicolonTextSize="12sp"
+        jackknife:verifycodeedittextgroup_type="lengthSix"
+        android:gravity="center"
+        android:padding="10dp"/>
 </LinearLayout>
