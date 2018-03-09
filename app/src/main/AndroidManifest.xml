@@ -45,14 +45,18 @@
         <activity android:name=".nestedscrollinglistview.NestedScrollingListViewActivity"/>
         <activity android:name=".radarview.RadarViewActivity"/>
         <activity android:name=".flowlayout.FlowLayoutActivity"/>
-        <activity android:name=".clearedittext.ClearEditTextActivity"/>
+        <activity android:name=".clearedittext.ClearEditTextActivity"
+            android:windowSoftInputMode="adjustPan"/>
         <activity android:name=".highlighttextview.HighlightTextViewActivity"/>
-        <activity android:name=".macedittext.MacEditTextActivity"/>
+        <activity android:name=".macedittext.MacEditTextActivity"
+            android:windowSoftInputMode="adjustPan"/>
         <activity android:name=".animatorscrollview.AnimatorScrollViewActivity"/>
         <activity android:name=".bottomnavigationbar.BottomNavigationBarActivity"/>
         <activity android:name=".instrumentview.InstrumentViewActivity"/>
-        <activity android:name=".serialnumberedittext.SerialNumberEditTextActivity"/>
-        <activity android:name=".verifycodeedittext.VerifyCodeEditTextActivity"/>
+        <activity android:name=".serialnumberedittext.SerialNumberEditTextActivity"
+            android:windowSoftInputMode="adjustPan"/>
+        <activity android:name=".verifycodeedittext.VerifyCodeEditTextActivity"
+            android:windowSoftInputMode="adjustPan"/>
         <activity android:name=".titlebar.TitleBarActivity"/>
         <activity android:name=".colorpickerview.ColorPickerViewActivity"/>
     </application>

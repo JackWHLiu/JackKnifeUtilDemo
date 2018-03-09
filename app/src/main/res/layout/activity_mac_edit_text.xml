@@ -26,6 +26,7 @@
         android:layout_height="wrap_content"
         jackknife:autoedittextgroup_sectionTextSize="15sp"
         jackknife:autoedittextgroup_semicolonTextSize="12sp"
+        android:focusableInTouchMode="true"
         android:gravity="center"
         android:padding="10dp"/>
 </LinearLayout>

@@ -18,9 +18,12 @@ package com.lwh.jackknife.demo.verifycodeedittext;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
+import android.util.Log;
 
 import com.lwh.jackknife.demo.R;
+import com.lwh.jackknife.widget.SerialNumberEditTextGroup;
 import com.lwh.jackknife.widget.VerifyCodeEditText;
 import com.lwh.jackknife.widget.VerifyCodeEditTextGroup;
 
@@ -33,6 +36,25 @@ public class VerifyCodeEditTextActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_verify_code_edit_text);
         verifyCodeView = (VerifyCodeEditTextGroup) findViewById(R.id.verifyCodeView);
-        verifyCodeView.setText(new String[] {"1", "2", "3", "4", "5", "6"});
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                String verifyCode = "123456";
+                verifyCodeView.setText(splitText(verifyCode));
+            }
+        }, 2000);
+    }
+
+    private String[] splitText(String input) {
+        StringBuffer sb = new StringBuffer(input);
+        for (int i=0;i<input.length()*2;i+=2) {
+            if (i != (input.length()-1)*2) {
+                sb.insert(i+1, "_");
+            }
+        }
+        String str = sb.toString();
+        Log.i("Jack", "拆分前：" + str);
+        String[] text = str.split("_");
+        return text;
     }
 }

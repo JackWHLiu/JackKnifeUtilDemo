@@ -19,14 +19,25 @@ package com.lwh.jackknife.demo.titlebar;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.view.View;
 
 import com.lwh.jackknife.demo.R;
+import com.lwh.jackknife.widget.TitleBar;
 
 public class TitleBarActivity extends Activity {
+
+    private TitleBar titlebar;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_title_bar);
+        titlebar = (TitleBar) findViewById(R.id.titlebar);
+        titlebar.setOnLeftClickListener(new TitleBar.OnLeftClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
     }
 }
