@@ -59,6 +59,8 @@
             android:windowSoftInputMode="adjustPan"/>
         <activity android:name=".titlebar.TitleBarActivity"/>
         <activity android:name=".colorpickerview.ColorPickerViewActivity"/>
+        <activity android:name=".animator.AnimatorActivity"/>
+        <activity android:name=".slidingmenu.SlidingMenuActivity"/>
     </application>
 
 </manifest>

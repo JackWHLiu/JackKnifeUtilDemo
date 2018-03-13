@@ -922,6 +922,68 @@
                     android:ellipsize="end"
                     android:layout_centerVertical="true"/>
             </RelativeLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/theme_item_outside_background"
+                android:layout_marginLeft="15dp"/>
+            <RelativeLayout
+                android:id="@+id/relativelayout_animator"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:clickable="true"
+                android:layout_marginTop="0.5dp">
+                <TextView
+                    android:id="@+id/textview_animator_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:layout_marginLeft="15dp"
+                    android:text="Animator"
+                    android:layout_centerVertical="true"/>
+                <TextView
+                    android:id="@+id/textview_animator_detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:textColor="@color/cyan"
+                    android:layout_marginLeft="15dp"
+                    android:layout_toRightOf="@id/textview_animator_name"
+                    android:text="动画框架2"
+                    android:ellipsize="end"
+                    android:layout_centerVertical="true"/>
+            </RelativeLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/theme_item_outside_background"
+                android:layout_marginLeft="15dp"/>
+            <RelativeLayout
+                android:id="@+id/relativelayout_slidingmenu"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:clickable="true"
+                android:layout_marginTop="0.5dp">
+                <TextView
+                    android:id="@+id/textview_slidingmenu_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:layout_marginLeft="15dp"
+                    android:text="SlidingMenu"
+                    android:layout_centerVertical="true"/>
+                <TextView
+                    android:id="@+id/textview_slidingmenu_detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:textColor="@color/cyan"
+                    android:layout_marginLeft="15dp"
+                    android:layout_toRightOf="@id/textview_slidingmenu_name"
+                    android:text="侧滑菜单"
+                    android:ellipsize="end"
+                    android:layout_centerVertical="true"/>
+            </RelativeLayout>
         </LinearLayout>
     </LinearLayout>
 </ScrollView>

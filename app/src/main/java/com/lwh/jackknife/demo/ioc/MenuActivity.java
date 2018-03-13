@@ -20,6 +20,7 @@ import android.content.Intent;
 import android.view.View;
 
 import com.lwh.jackknife.demo.R;
+import com.lwh.jackknife.demo.animator.AnimatorActivity;
 import com.lwh.jackknife.demo.animatorscrollview.AnimatorScrollViewActivity;
 import com.lwh.jackknife.demo.basemodel.BaseModelActivity;
 import com.lwh.jackknife.demo.bottomnavigationbar.BottomNavigationBarActivity;
@@ -39,6 +40,7 @@ import com.lwh.jackknife.demo.orm.OrmActivity;
 import com.lwh.jackknife.demo.radarview.RadarViewActivity;
 import com.lwh.jackknife.demo.serialnumberedittext.SerialNumberEditTextActivity;
 import com.lwh.jackknife.demo.shadeview.ShadeViewActivity;
+import com.lwh.jackknife.demo.slidingmenu.SlidingMenuActivity;
 import com.lwh.jackknife.demo.titlebar.TitleBarActivity;
 import com.lwh.jackknife.demo.utils.LoggerActivity;
 import com.lwh.jackknife.demo.utils.ToastActivity;
@@ -70,7 +72,9 @@ public class MenuActivity extends com.lwh.jackknife.app.Activity {
             R.id.relativelayout_serialnumberedittext,
             R.id.relativelayout_verifycodeedittext,
             R.id.relativelayout_titlebar,
-            R.id.relativelayout_colorpickerview
+            R.id.relativelayout_colorpickerview,
+            R.id.relativelayout_animator,
+            R.id.relativelayout_slidingmenu
     })
     public void onMenuItemClick(View view) {
         Intent intent = new Intent();
@@ -146,6 +150,12 @@ public class MenuActivity extends com.lwh.jackknife.app.Activity {
                 break;
             case R.id.relativelayout_colorpickerview:
                 intent.setClass(this, ColorPickerViewActivity.class);
+                break;
+            case R.id.relativelayout_animator:
+                intent.setClass(this, AnimatorActivity.class);
+                break;
+            case R.id.relativelayout_slidingmenu:
+                intent.setClass(this, SlidingMenuActivity.class);
                 break;
         }
         startActivity(intent);
