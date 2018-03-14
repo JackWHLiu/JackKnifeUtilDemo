@@ -37,6 +37,7 @@ import com.lwh.jackknife.demo.multiradiogroup.MultiRadioGroupActivity;
 import com.lwh.jackknife.demo.mvp.ArticleActivity;
 import com.lwh.jackknife.demo.nestedscrollinglistview.NestedScrollingListViewActivity;
 import com.lwh.jackknife.demo.orm.OrmActivity;
+import com.lwh.jackknife.demo.progressbutton.ProgressButtonActivity;
 import com.lwh.jackknife.demo.radarview.RadarViewActivity;
 import com.lwh.jackknife.demo.serialnumberedittext.SerialNumberEditTextActivity;
 import com.lwh.jackknife.demo.shadeview.ShadeViewActivity;
@@ -74,7 +75,8 @@ public class MenuActivity extends com.lwh.jackknife.app.Activity {
             R.id.relativelayout_titlebar,
             R.id.relativelayout_colorpickerview,
             R.id.relativelayout_animator,
-            R.id.relativelayout_slidingmenu
+            R.id.relativelayout_slidingmenu,
+            R.id.relativelayout_progressbutton
     })
     public void onMenuItemClick(View view) {
         Intent intent = new Intent();
@@ -156,6 +158,9 @@ public class MenuActivity extends com.lwh.jackknife.app.Activity {
                 break;
             case R.id.relativelayout_slidingmenu:
                 intent.setClass(this, SlidingMenuActivity.class);
+                break;
+            case R.id.relativelayout_progressbutton:
+                intent.setClass(this, ProgressButtonActivity.class);
                 break;
         }
         startActivity(intent);

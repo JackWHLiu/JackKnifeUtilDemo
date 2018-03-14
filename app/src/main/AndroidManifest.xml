@@ -61,6 +61,7 @@
         <activity android:name=".colorpickerview.ColorPickerViewActivity"/>
         <activity android:name=".animator.AnimatorActivity"/>
         <activity android:name=".slidingmenu.SlidingMenuActivity"/>
+        <activity android:name=".progressbutton.ProgressButtonActivity"/>
     </application>
 
 </manifest>
