@@ -54,7 +54,11 @@ public class LoggerActivity extends Activity implements View.OnClickListener{
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.button_logger_case:
-                Logger.DEBUG = !Logger.DEBUG;//改变日志开关
+                if (Logger.isClosed()) {//改变日志开关
+                    Logger.open();
+                } else {
+                    Logger.close();
+                }
                 refreshCase();
                 break;
             case R.id.button_logger_print:
@@ -64,7 +68,7 @@ public class LoggerActivity extends Activity implements View.OnClickListener{
     }
 
     private void refreshCase() {
-        if (Logger.DEBUG) {
+        if (Logger.isOpened()) {
             textview_logger_tips.setText("日志开关:开");
             button_logger_case.setText("关闭日志");
         } else {

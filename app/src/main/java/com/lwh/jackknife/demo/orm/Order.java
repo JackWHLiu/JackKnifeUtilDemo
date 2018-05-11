@@ -17,9 +17,9 @@
 package com.lwh.jackknife.demo.orm;
 
 import com.lwh.jackknife.orm.OrmTable;
-import com.lwh.jackknife.orm.annotation.Column;
-import com.lwh.jackknife.orm.annotation.ForeignKey;
-import com.lwh.jackknife.orm.annotation.Table;
+import com.lwh.jackknife.orm.constraint.Column;
+import com.lwh.jackknife.orm.constraint.ForeignKey;
+import com.lwh.jackknife.orm.constraint.Table;
 
 /**
  * 订单表。
@@ -81,5 +81,15 @@ public class Order implements OrmTable {
 
     public double getMoney() {
         return money;
+    }
+
+    @Override
+    public <T> T getIdentifierValue() {
+        return (T) new Integer(userId);
+    }
+
+    @Override
+    public boolean isUpgradeRecreated() {
+        return false;
     }
 }

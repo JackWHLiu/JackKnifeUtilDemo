@@ -25,7 +25,6 @@ import android.view.View;
 import android.widget.Button;
 
 import com.lwh.jackknife.demo.R;
-import com.lwh.jackknife.util.ToastUtils;
 import com.lwh.jackknife.widget.ProgressButton;
 
 public class ProgressButtonActivity extends Activity {

@@ -18,11 +18,11 @@ package com.lwh.jackknife.demo.orm;
 
 import com.lwh.jackknife.orm.AssignType;
 import com.lwh.jackknife.orm.OrmTable;
-import com.lwh.jackknife.orm.annotation.Column;
-import com.lwh.jackknife.orm.annotation.NotNull;
-import com.lwh.jackknife.orm.annotation.PrimaryKey;
-import com.lwh.jackknife.orm.annotation.Table;
-import com.lwh.jackknife.orm.annotation.Unique;
+import com.lwh.jackknife.orm.constraint.Column;
+import com.lwh.jackknife.orm.constraint.NotNull;
+import com.lwh.jackknife.orm.constraint.PrimaryKey;
+import com.lwh.jackknife.orm.constraint.Table;
+import com.lwh.jackknife.orm.constraint.Unique;
 
 @Table("user")
 public class User implements OrmTable {
@@ -64,5 +64,15 @@ public class User implements OrmTable {
                 ", name='" + name + '\'' +
                 ", age=" + age +
                 '}';
+    }
+
+    @Override
+    public <T> T getIdentifierValue() {
+        return (T) new Integer(id);
+    }
+
+    @Override
+    public boolean isUpgradeRecreated() {
+        return false;
     }
 }

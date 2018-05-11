@@ -23,17 +23,14 @@ import android.widget.TextView;
 import com.lwh.jackknife.demo.R;
 import com.lwh.jackknife.orm.Orm;
 import com.lwh.jackknife.orm.OrmConfig;
-import com.lwh.jackknife.orm.TableManager;
 import com.lwh.jackknife.orm.builder.QueryBuilder;
 import com.lwh.jackknife.orm.builder.WhereBuilder;
-import com.lwh.jackknife.orm.dao.Dao;
 import com.lwh.jackknife.orm.dao.DaoFactory;
 import com.lwh.jackknife.orm.dao.OrmDao;
 import com.lwh.jackknife.util.Logger;
 import com.lwh.jackknife.util.TextUtils;
 import com.lwh.jackknife.util.TimeUtils;
 
-import java.sql.Time;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -60,10 +57,9 @@ public class OrmActivity extends Activity {
         OrmConfig config = new OrmConfig.Builder()
                 .database("ormdemo")//数据库名称
                 .version(1)//数据库版本号，默认1，只能升不能降
+                .tables(User.class, Order.class) //创表，或者使用TableManager.createTable()创表
                 .build();
         Orm.init(this, config);
-        TableManager.getInstance().createTable(User.class);//创表
-        TableManager.getInstance().createTable(Order.class);
         //---------- 强烈建议这段代码写在Application（结束）----------
         mUserDao = DaoFactory.getDao(User.class);
         mOrderDao = DaoFactory.getDao(Order.class);
