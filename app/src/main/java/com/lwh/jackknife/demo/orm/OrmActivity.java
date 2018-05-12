@@ -23,6 +23,8 @@ import android.widget.TextView;
 import com.lwh.jackknife.demo.R;
 import com.lwh.jackknife.orm.Orm;
 import com.lwh.jackknife.orm.OrmConfig;
+import com.lwh.jackknife.orm.OrmLog;
+import com.lwh.jackknife.orm.TableManager;
 import com.lwh.jackknife.orm.builder.QueryBuilder;
 import com.lwh.jackknife.orm.builder.WhereBuilder;
 import com.lwh.jackknife.orm.dao.DaoFactory;
@@ -56,10 +58,11 @@ public class OrmActivity extends Activity {
         //---------- 强烈建议这段代码写在Application（开始） ----------
         OrmConfig config = new OrmConfig.Builder()
                 .database("ormdemo")//数据库名称
-                .version(1)//数据库版本号，默认1，只能升不能降
+                .version(1)//数据库版本号，默认1，只能升不能降，当框架检测到数据库版本过低就会升级表，所有当
+                // OrmTable的实现类发生结构变化时，要更新表，必须提升数据库版本号
                 .tables(User.class, Order.class) //创表，或者使用TableManager.createTable()创表
                 .build();
-        Orm.init(this, config);
+        Orm.init(this, config); //或者用Orm.init(Context context, String databaseName);不用包含db后缀
         //---------- 强烈建议这段代码写在Application（结束）----------
         mUserDao = DaoFactory.getDao(User.class);
         mOrderDao = DaoFactory.getDao(Order.class);
@@ -87,26 +90,31 @@ public class OrmActivity extends Activity {
         Order firstOrder = mOrderDao.selectOne();
         Logger.error(firstOrder.toString());
         Logger.error("orderCount="+orderCount);
+        WhereBuilder builder = WhereBuilder.create()
+                .parenthesesLeft()// (
+                .addWhereGreaterThan("age", 15) //age > 15
+                .and()  // and
+                .addWhereLessThanOrEqualTo("age", 17) // age <= 17
+                .parenthesesRight()  // )
+                .orWhereEqualTo("name", "Alm");  //or name = alm
+        String sql = builder.build();
+        OrmLog.d(sql);
         List<User> result = mUserDao.select(QueryBuilder.create()
                 .groupBy("name")//按name分组，并排序，字母或数字升序
                 .having("age < 20")//条件，必须在分组之后使用。在SQL中增加HAVING子句原因是，WHERE关键字无法与合计函数一起使用。
                 .orderBy("age DESC")//排序，最终的排序，在groupby排序之后，默认的ASC可省略，sql的关键字大小写不敏感，即也可以age asc
                 .limit(0, 2)//截取下标为0和1的2条数据，limit传一个参数表示个数，传两个参数表示截取
-                .where(WhereBuilder.create()
-                        .parenthesesLeft()// (
-                        .addWhereGreaterThan("age", 15) //age > 15
-                        .and()  // and
-                        .addWhereLessThanOrEqualTo("age", 17) // age <= 17
-                        .parenthesesRight()  // )
-                        .orWhereEqualTo("name", "Alm")  //or name = alm
-                )
+                .where(builder)
 
         );
+//        TableManager.dropTable(Order.class);
         if (orders.size() > 0) {
             for (Order order : orders) {
                 Logger.error(order.toString());
             }
         }
+
+//        TableManager.dropTable(User.class);
         for (User user : result) {
             Logger.error(user.toString());
         }

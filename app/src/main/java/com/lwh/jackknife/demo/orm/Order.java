@@ -17,9 +17,11 @@
 package com.lwh.jackknife.demo.orm;
 
 import com.lwh.jackknife.orm.OrmTable;
-import com.lwh.jackknife.orm.constraint.Column;
-import com.lwh.jackknife.orm.constraint.ForeignKey;
-import com.lwh.jackknife.orm.constraint.Table;
+import com.lwh.jackknife.orm.constraint.AssignType;
+import com.lwh.jackknife.orm.constraint.Default;
+import com.lwh.jackknife.orm.constraint.PrimaryKey;
+import com.lwh.jackknife.orm.table.Column;
+import com.lwh.jackknife.orm.table.Table;
 
 /**
  * 订单表。
@@ -33,12 +35,9 @@ public class Order implements OrmTable {
      * 订单编号。
      */
     @Column("order_id")
+    @PrimaryKey(AssignType.BY_MYSELF)   // 自己指定其值
     private String orderId;
 
-    /**
-     * 外键是用户表的id主键。
-     */
-    @ForeignKey(User.class)
     @Column("user_id")
     private int userId;
 
@@ -84,7 +83,7 @@ public class Order implements OrmTable {
     }
 
     @Override
-    public <T> T getIdentifierValue() {
+    public <T> T getPrimaryKeyValue() {
         return (T) new Integer(userId);
     }
 

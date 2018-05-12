@@ -16,28 +16,32 @@
 
 package com.lwh.jackknife.demo.orm;
 
-import com.lwh.jackknife.orm.AssignType;
 import com.lwh.jackknife.orm.OrmTable;
-import com.lwh.jackknife.orm.constraint.Column;
+import com.lwh.jackknife.orm.constraint.AssignType;
+import com.lwh.jackknife.orm.constraint.Check;
+import com.lwh.jackknife.orm.constraint.Default;
 import com.lwh.jackknife.orm.constraint.NotNull;
 import com.lwh.jackknife.orm.constraint.PrimaryKey;
-import com.lwh.jackknife.orm.constraint.Table;
 import com.lwh.jackknife.orm.constraint.Unique;
+import com.lwh.jackknife.orm.table.Column;
+import com.lwh.jackknife.orm.table.Table;
 
 @Table("user")
 public class User implements OrmTable {
 
-    @PrimaryKey(AssignType.AUTO_INCREMENT)
+    @PrimaryKey(AssignType.AUTO_INCREMENT)  //自增长
     @Column("_id")
     private int id;
 
     @Unique
     @NotNull
     @Column("name")
+    @Default("张三")
     private String name;
 
     @NotNull
     @Column("age")
+    @Check("age>=0 and age<=100") //age为列名，不要写属性名
     private int age;
 
     public User(String name, int age) {
@@ -67,7 +71,7 @@ public class User implements OrmTable {
     }
 
     @Override
-    public <T> T getIdentifierValue() {
+    public <T> T getPrimaryKeyValue() {
         return (T) new Integer(id);
     }
 
