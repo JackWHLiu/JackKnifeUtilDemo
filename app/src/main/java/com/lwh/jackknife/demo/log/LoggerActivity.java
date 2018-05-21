@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.lwh.jackknife.demo.utils;
+package com.lwh.jackknife.demo.log;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -25,7 +25,7 @@ import android.widget.TextView;
 import com.lwh.jackknife.demo.R;
 import com.lwh.jackknife.util.Logger;
 
-public class LoggerActivity extends Activity implements View.OnClickListener{
+public class LoggerActivity extends Activity implements View.OnClickListener {
 
     TextView textview_logger_tips;
     Button button_logger_case;

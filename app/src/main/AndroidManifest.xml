@@ -1,19 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-  ~ Copyright (C) 2018. The JackKnife Open Source Project
-  ~
-  ~ Licensed under the Apache License, Version 2.0 (the "License");
-  ~ you may not use this file except in compliance with the License.
-  ~ You may obtain a copy of the License at
-  ~
-  ~      http://www.apache.org/licenses/LICENSE-2.0
-  ~
-  ~ Unless required by applicable law or agreed to in writing, software
-  ~ distributed under the License is distributed on an "AS IS" BASIS,
-  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  ~ See the License for the specific language governing permissions and
-  ~ limitations under the License.
-  -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.lwh.jackknife.demo">
@@ -25,44 +10,104 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true">
-        <activity android:name=".ioc.MenuActivity">
+        <activity android:name=".ioc.MenuActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".utils.LoggerActivity"/>
-        <activity android:name=".utils.ToastActivity"/>
-        <activity android:name=".basemodel.BaseModelActivity"/>
-        <activity android:name=".ioc.IocActivity"/>
-        <activity android:name=".commonadapter.CommonAdapterActivity"/>
-        <activity android:name=".mvp.ArticleActivity"/>
-        <activity android:name=".orm.OrmActivity"/>
-        <activity android:name=".shadeview.ShadeViewActivity"/>
-        <activity android:name=".horizontaltabbar.HorizontalTabBarActivity"/>
-        <activity android:name=".multiradiogroup.MultiRadioGroupActivity"/>
-        <activity android:name=".letterview.LetterViewActivity"/>
-        <activity android:name=".nestedscrollinglistview.NestedScrollingListViewActivity"/>
-        <activity android:name=".radarview.RadarViewActivity"/>
-        <activity android:name=".flowlayout.FlowLayoutActivity"/>
-        <activity android:name=".clearedittext.ClearEditTextActivity"
-            android:windowSoftInputMode="adjustPan"/>
-        <activity android:name=".highlighttextview.HighlightTextViewActivity"/>
-        <activity android:name=".macedittext.MacEditTextActivity"
-            android:windowSoftInputMode="adjustPan"/>
-        <activity android:name=".animatorscrollview.AnimatorScrollViewActivity"/>
-        <activity android:name=".bottomnavigationbar.BottomNavigationBarActivity"/>
-        <activity android:name=".instrumentview.InstrumentViewActivity"/>
-        <activity android:name=".serialnumberedittext.SerialNumberEditTextActivity"
-            android:windowSoftInputMode="adjustPan"/>
-        <activity android:name=".verifycodeedittext.VerifyCodeEditTextActivity"
-            android:windowSoftInputMode="adjustPan"/>
-        <activity android:name=".titlebar.TitleBarActivity"/>
-        <activity android:name=".colorpickerview.ColorPickerViewActivity"/>
-        <activity android:name=".animator.AnimatorActivity"/>
-        <activity android:name=".slidingmenu.SlidingMenuActivity"/>
-        <activity android:name=".progressbutton.ProgressButtonActivity"/>
+        <activity
+            android:name=".log.LoggerActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".toast.ToastActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".basemodel.BaseModelActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ioc.IocActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".commonadapter.CommonAdapterActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".mvp.ArticleActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".orm.OrmActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".shadeview.ShadeViewActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".horizontaltabbar.HorizontalTabBarActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".multiradiogroup.MultiRadioGroupActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".letterview.LetterViewActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".nestedscrollinglistview.NestedScrollingListViewActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".radarview.RadarViewActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".flowlayout.FlowLayoutActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".clearedittext.ClearEditTextActivity"
+            android:windowSoftInputMode="adjustPan"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".highlighttextview.HighlightTextViewActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".macedittext.MacEditTextActivity"
+            android:windowSoftInputMode="adjustPan"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".animatorscrollview.AnimatorScrollViewActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".bottomnavigationbar.BottomNavigationBarActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".instrumentview.InstrumentViewActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".serialnumberedittext.SerialNumberEditTextActivity"
+            android:windowSoftInputMode="adjustPan"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".verifycodeedittext.VerifyCodeEditTextActivity"
+            android:windowSoftInputMode="adjustPan"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".titlebar.TitleBarActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".colorpickerview.ColorPickerViewActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".animator.AnimatorActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".slidingmenu.SlidingMenuActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".progressbutton.ProgressButtonActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".gifview.GifViewActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".circularprogressbar.CircularProgressBarActivity"
+            android:screenOrientation="portrait"/>
     </application>
-
 </manifest>

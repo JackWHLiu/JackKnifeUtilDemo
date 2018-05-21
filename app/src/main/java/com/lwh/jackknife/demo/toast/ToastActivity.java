@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.lwh.jackknife.demo.utils;
+package com.lwh.jackknife.demo.toast;
 
 import android.app.Activity;
 import android.os.Bundle;

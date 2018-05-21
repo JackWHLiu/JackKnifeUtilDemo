@@ -18,7 +18,6 @@ package com.lwh.jackknife.demo.orm;
 
 import com.lwh.jackknife.orm.OrmTable;
 import com.lwh.jackknife.orm.constraint.AssignType;
-import com.lwh.jackknife.orm.constraint.Default;
 import com.lwh.jackknife.orm.constraint.PrimaryKey;
 import com.lwh.jackknife.orm.table.Column;
 import com.lwh.jackknife.orm.table.Table;
@@ -84,7 +83,7 @@ public class Order implements OrmTable {
 
     @Override
     public <T> T getPrimaryKeyValue() {
-        return (T) new Integer(userId);
+        return (T) orderId;
     }
 
     @Override

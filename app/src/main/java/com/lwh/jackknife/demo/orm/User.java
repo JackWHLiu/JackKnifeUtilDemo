@@ -29,7 +29,7 @@ import com.lwh.jackknife.orm.table.Table;
 @Table("user")
 public class User implements OrmTable {
 
-    @PrimaryKey(AssignType.AUTO_INCREMENT)  //自增长
+    @PrimaryKey(AssignType.AUTO_INCREMENT)  //从1开始自增长
     @Column("_id")
     private int id;
 

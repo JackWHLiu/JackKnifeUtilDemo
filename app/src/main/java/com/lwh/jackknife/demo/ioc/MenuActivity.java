@@ -24,10 +24,12 @@ import com.lwh.jackknife.demo.animator.AnimatorActivity;
 import com.lwh.jackknife.demo.animatorscrollview.AnimatorScrollViewActivity;
 import com.lwh.jackknife.demo.basemodel.BaseModelActivity;
 import com.lwh.jackknife.demo.bottomnavigationbar.BottomNavigationBarActivity;
+import com.lwh.jackknife.demo.circularprogressbar.CircularProgressBarActivity;
 import com.lwh.jackknife.demo.clearedittext.ClearEditTextActivity;
 import com.lwh.jackknife.demo.colorpickerview.ColorPickerViewActivity;
 import com.lwh.jackknife.demo.commonadapter.CommonAdapterActivity;
 import com.lwh.jackknife.demo.flowlayout.FlowLayoutActivity;
+import com.lwh.jackknife.demo.gifview.GifViewActivity;
 import com.lwh.jackknife.demo.highlighttextview.HighlightTextViewActivity;
 import com.lwh.jackknife.demo.horizontaltabbar.HorizontalTabBarActivity;
 import com.lwh.jackknife.demo.instrumentview.InstrumentViewActivity;
@@ -43,8 +45,8 @@ import com.lwh.jackknife.demo.serialnumberedittext.SerialNumberEditTextActivity;
 import com.lwh.jackknife.demo.shadeview.ShadeViewActivity;
 import com.lwh.jackknife.demo.slidingmenu.SlidingMenuActivity;
 import com.lwh.jackknife.demo.titlebar.TitleBarActivity;
-import com.lwh.jackknife.demo.utils.LoggerActivity;
-import com.lwh.jackknife.demo.utils.ToastActivity;
+import com.lwh.jackknife.demo.log.LoggerActivity;
+import com.lwh.jackknife.demo.toast.ToastActivity;
 import com.lwh.jackknife.demo.verifycodeedittext.VerifyCodeEditTextActivity;
 
 public class MenuActivity extends com.lwh.jackknife.app.Activity {
@@ -76,7 +78,9 @@ public class MenuActivity extends com.lwh.jackknife.app.Activity {
             R.id.relativelayout_colorpickerview,
             R.id.relativelayout_animator,
             R.id.relativelayout_slidingmenu,
-            R.id.relativelayout_progressbutton
+            R.id.relativelayout_progressbutton,
+            R.id.relativelayout_gifview,
+            R.id.relativelayout_circularprogressbar
     })
     public void onMenuItemClick(View view) {
         Intent intent = new Intent();
@@ -161,6 +165,12 @@ public class MenuActivity extends com.lwh.jackknife.app.Activity {
                 break;
             case R.id.relativelayout_progressbutton:
                 intent.setClass(this, ProgressButtonActivity.class);
+                break;
+            case R.id.relativelayout_gifview:
+                intent.setClass(this, GifViewActivity.class);
+                break;
+            case R.id.relativelayout_circularprogressbar:
+                intent.setClass(this, CircularProgressBarActivity.class);
                 break;
         }
         startActivity(intent);
