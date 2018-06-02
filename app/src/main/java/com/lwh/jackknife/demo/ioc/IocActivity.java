@@ -24,15 +24,15 @@ import android.widget.TextView;
 import com.lwh.jackknife.app.Activity;
 import com.lwh.jackknife.demo.R;
 import com.lwh.jackknife.ioc.ContentView;
-import com.lwh.jackknife.ioc.ViewId;
 import com.lwh.jackknife.ioc.ViewIgnore;
+import com.lwh.jackknife.ioc.ViewInject;
 
 @ContentView(R.layout.activity_ioc)//此注解可以配置，也可以不配置，参考ViewInjector#generateLayoutName()
 public class IocActivity extends Activity {
 
     private LinearLayout linearlayout_ioc_root;//可以使用默认的id
 
-    @ViewId(R.id.textview_ioc_count)//也可以自己指定id
+    @ViewInject(R.id.textview_ioc_count)//也可以自己指定id
     TextView mCountTextView;
 
     @ViewIgnore//此注解用在使用代码new出来的View
