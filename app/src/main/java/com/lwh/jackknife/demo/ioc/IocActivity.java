@@ -26,6 +26,7 @@ import com.lwh.jackknife.demo.R;
 import com.lwh.jackknife.ioc.ContentView;
 import com.lwh.jackknife.ioc.ViewIgnore;
 import com.lwh.jackknife.ioc.ViewInject;
+import com.lwh.jackknife.ioc.annotations.OnClick;
 
 @ContentView(R.layout.activity_ioc)//此注解可以配置，也可以不配置，参考ViewInjector#generateLayoutName()
 public class IocActivity extends Activity {

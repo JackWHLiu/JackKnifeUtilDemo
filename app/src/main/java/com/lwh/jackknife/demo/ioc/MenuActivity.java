@@ -48,6 +48,7 @@ import com.lwh.jackknife.demo.titlebar.TitleBarActivity;
 import com.lwh.jackknife.demo.log.LoggerActivity;
 import com.lwh.jackknife.demo.toast.ToastActivity;
 import com.lwh.jackknife.demo.verifycodeedittext.VerifyCodeEditTextActivity;
+import com.lwh.jackknife.ioc.annotations.OnClick;
 
 public class MenuActivity extends com.lwh.jackknife.app.Activity {
 
