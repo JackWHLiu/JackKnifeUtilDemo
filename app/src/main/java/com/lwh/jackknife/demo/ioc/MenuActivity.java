@@ -33,6 +33,7 @@ import com.lwh.jackknife.demo.gifview.GifViewActivity;
 import com.lwh.jackknife.demo.highlighttextview.HighlightTextViewActivity;
 import com.lwh.jackknife.demo.horizontaltabbar.HorizontalTabBarActivity;
 import com.lwh.jackknife.demo.instrumentview.InstrumentViewActivity;
+import com.lwh.jackknife.demo.ioc2.Ioc2Activity;
 import com.lwh.jackknife.demo.letterview.LetterViewActivity;
 import com.lwh.jackknife.demo.macedittext.MacEditTextActivity;
 import com.lwh.jackknife.demo.multiradiogroup.MultiRadioGroupActivity;
@@ -48,7 +49,7 @@ import com.lwh.jackknife.demo.titlebar.TitleBarActivity;
 import com.lwh.jackknife.demo.log.LoggerActivity;
 import com.lwh.jackknife.demo.toast.ToastActivity;
 import com.lwh.jackknife.demo.verifycodeedittext.VerifyCodeEditTextActivity;
-import com.lwh.jackknife.ioc.annotations.OnClick;
+import com.lwh.jackknife.ioc.annotation.OnClick;
 
 public class MenuActivity extends com.lwh.jackknife.app.Activity {
 
@@ -57,6 +58,7 @@ public class MenuActivity extends com.lwh.jackknife.app.Activity {
             R.id.relativelayout_toastutils,
             R.id.relativelayout_basemodel,
             R.id.relativelayout_ioc,
+            R.id.relativelayout_ioc2,
             R.id.relativelayout_commonadapter,
             R.id.relativelayout_mvp,
             R.id.relativelayout_orm,
@@ -97,6 +99,9 @@ public class MenuActivity extends com.lwh.jackknife.app.Activity {
                 break;
             case R.id.relativelayout_ioc:
                 intent.setClass(this, IocActivity.class);
+                break;
+            case R.id.relativelayout_ioc2:
+                intent.setClass(this, Ioc2Activity.class);
                 break;
             case R.id.relativelayout_commonadapter:
                 intent.setClass(this, CommonAdapterActivity.class);

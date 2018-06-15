@@ -31,6 +31,9 @@
             android:name=".ioc.IocActivity"
             android:screenOrientation="portrait"/>
         <activity
+            android:name=".ioc2.Ioc2Activity"
+            android:screenOrientation="portrait"/>
+        <activity
             android:name=".commonadapter.CommonAdapterActivity"
             android:screenOrientation="portrait"/>
         <activity
