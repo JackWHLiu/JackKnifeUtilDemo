@@ -1,4 +1,4 @@
-# JackKnifeDemo的官方使用教程【已归档】
+# JackKnifeDemo的官方使用教程
 此项目基于jackknife 2.5.2的代码写的，如若要正常使用Demo中的功能，请compile该版本或更新版本的库。
 
 ## 如果遇到以下问题：
