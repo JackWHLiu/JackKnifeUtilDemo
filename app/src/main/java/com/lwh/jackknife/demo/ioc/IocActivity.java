@@ -28,10 +28,12 @@ import com.lwh.jackknife.ioc.annotation.OnClick;
 import com.lwh.jackknife.ioc.annotation.ViewIgnore;
 import com.lwh.jackknife.ioc.annotation.ViewInject;
 
+/**
+ * 测试jackknife-ioc的自动设置布局、绑定控件和注入事件。
+ */
 @ContentView(R.layout.activity_ioc)//此注解可以配置，也可以不配置，参考ViewInjector#generateLayoutName()
 public class IocActivity extends Activity {
 
-    @ViewIgnore//此注解用在使用代码new出来的View
     LinearLayout linearlayout_ioc_root;//可以使用默认的id
 
     @ViewInject(R.id.textview_ioc_count)//也可以自己指定id

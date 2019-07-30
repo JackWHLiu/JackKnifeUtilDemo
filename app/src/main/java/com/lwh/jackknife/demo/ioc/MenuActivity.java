@@ -181,4 +181,9 @@ public class MenuActivity extends com.lwh.jackknife.app.Activity {
         }
         startActivity(intent);
     }
+
+    @Override
+    public <VIEW extends View> VIEW getView(int id) {
+        return (VIEW) findViewById(id);
+    }
 }

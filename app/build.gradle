@@ -18,15 +18,20 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "26.0.2"
     defaultConfig {
         applicationId "com.lwh.jackknife.demo"
         minSdkVersion 11
-        targetSdkVersion 23
+        targetSdkVersion 25
         versionCode 1
         versionName "1.0"
-        //dex突破65535的限制
-        multiDexEnabled true
+
+        //使用apt功能在高版本gradle下需要配置，如使用jackknife-ioc2就需要以下配置
+        javaCompileOptions {
+            annotationProcessorOptions {
+                    includeCompileClasspath = true
+            }
+        }
+
     }
     buildTypes {
         release {
@@ -36,6 +41,10 @@ android {
     }
 }
 
+configurations.all {
+    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+}
+
 repositories {
     flatDir {
         dir 'libs'
@@ -43,12 +52,14 @@ repositories {
 }
 
 dependencies {
-    compile 'com.github.JackWHLiu.jackknife:jackknife-ioc:2.5.2'
-    compile 'com.github.JackWHLiu.jackknife:jackknife-orm:2.5.2'
-    compile 'com.github.JackWHLiu.jackknife:jackknife-mvp:2.5.2'
-    compile 'com.github.JackWHLiu.jackknife:jackknife-widget:2.5.2'
-    compile 'com.github.JackWHLiu.jackknife:jackknife-util:2.5.2'
-    compile 'com.github.JackWHLiu.jackknife:jackknife-annotations-ioc:2.5.2'
-    compile 'com.github.JackWHLiu.jackknife:jackknife-ioc2:2.5.2'
-    compile 'com.android.support:support-v4:25.2.0'
+    // 此处版本号写成master-SNAPSHOT表示使用最新提交的代码进行编译，仅用于库的开发测试。生产环境请
+    // 指定具体的最新稳定版本号。
+    implementation 'com.github.JackWHLiu.jackknife:jackknife-ioc:master-SNAPSHOT'
+    implementation 'com.github.JackWHLiu.jackknife:jackknife-orm:master-SNAPSHOT'
+    implementation 'com.github.JackWHLiu.jackknife:jackknife-mvp:master-SNAPSHOT'
+    implementation 'com.github.JackWHLiu.jackknife:jackknife-widget:master-SNAPSHOT'
+    implementation 'com.github.JackWHLiu.jackknife:jackknife-util:master-SNAPSHOT'
+    implementation 'com.github.JackWHLiu.jackknife:jackknife-annotations-ioc:master-SNAPSHOT'
+    implementation 'com.github.JackWHLiu.jackknife:jackknife-ioc2:master-SNAPSHOT'
+    implementation 'com.android.support:support-v4:25.2.0'
 }

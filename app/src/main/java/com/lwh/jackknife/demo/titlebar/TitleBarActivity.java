@@ -33,11 +33,5 @@ public class TitleBarActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_title_bar);
         titlebar = (TitleBar) findViewById(R.id.titlebar);
-        titlebar.setOnLeftClickListener(new TitleBar.OnLeftClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
     }
 }

@@ -29,7 +29,7 @@ public class ArticlePresenter extends BasePresenter<IArticleView> {
 
     public void fetchArticles() {
         if (isViewAttached()) {
-            mArticleView = getView();
+            mArticleView = getV();
             mArticleModel = new ArticleModel();
             List<Article> articles = new ArrayList<>();
             articles.add(new Article("《三个火枪手》", "法国", "大仲马"));

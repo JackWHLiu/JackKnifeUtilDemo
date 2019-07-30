@@ -17,6 +17,7 @@
 package com.lwh.jackknife.demo.orm;
 
 import com.lwh.jackknife.orm.OrmTable;
+import com.lwh.jackknife.orm.PrimaryKeyEntity;
 import com.lwh.jackknife.orm.constraint.AssignType;
 import com.lwh.jackknife.orm.constraint.Check;
 import com.lwh.jackknife.orm.constraint.Default;
@@ -71,8 +72,8 @@ public class User implements OrmTable {
     }
 
     @Override
-    public <T> T getPrimaryKeyValue() {
-        return (T) new Integer(id);
+    public PrimaryKeyEntity getPrimaryKey() {
+        return new PrimaryKeyEntity("_id", id);
     }
 
     @Override

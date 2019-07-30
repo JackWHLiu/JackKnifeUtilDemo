@@ -18,15 +18,18 @@ package com.lwh.jackknife.demo.ioc2;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import com.lwh.jackknife.demo.R;
+import com.lwh.jackknife.ioc.annotation.OnClick;
+import com.lwh.jackknife.ioc2.Ioc2EventSupport;
 import com.lwh.jackknife.ioc2.ViewInjector;
 import com.lwh.jackknife.ioc2.annotation.ContentView;
 import com.lwh.jackknife.ioc2.annotation.ViewInject;
 
 @ContentView(R.layout.activity_ioc2)
-public class Ioc2Activity extends Activity {
+public class Ioc2Activity extends Activity implements Ioc2EventSupport {
 
     @ViewInject(R.id.tv_ioc2_text1)
     TextView mTextViewOne;
@@ -37,12 +40,26 @@ public class Ioc2Activity extends Activity {
     @ViewInject(R.id.tv_ioc2_text3)
     TextView mTextViewThree;
 
+    @OnClick(R.id.tv_ioc2_text3)
+    public void onClick2(View view) {
+        mTextViewThree.setText("----------------------------");
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ViewInjector.inject(this);
+        setContentView(R.layout.activity_ioc2);
+        mTextViewOne = (TextView) findViewById(R.id.tv_ioc2_text1);
+        mTextViewTwo = (TextView) findViewById(R.id.tv_ioc2_text2);
+        mTextViewThree = (TextView) findViewById(R.id.tv_ioc2_text3);
+        ViewInjector.injectEvents(this);
         mTextViewOne.setText("ioc2使用的是编译期注解");
-        mTextViewTwo.setText("效率高但有局限性，只支持对Activity的注入");
-        mTextViewThree.setText("老版ioc的功能更全");
+        mTextViewTwo.setText("ioc2避免了反射，性能比老版本ioc好");
+        mTextViewThree.setText("ioc2支持Activity和Fragment");
+    }
+
+    @Override
+    public Object getView(int id) {
+        return findViewById(id);
     }
 }

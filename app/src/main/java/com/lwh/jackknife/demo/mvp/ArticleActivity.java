@@ -16,6 +16,7 @@
 
 package com.lwh.jackknife.demo.mvp;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -51,6 +52,11 @@ public class ArticleActivity extends BaseActivity<IArticleView, ArticlePresenter
 
     @Override
     public void hideLoading() {
+    }
+
+    @Override
+    public Context getContext() {
+        return this;
     }
 
     private String printResult(List<Article> articles) {
