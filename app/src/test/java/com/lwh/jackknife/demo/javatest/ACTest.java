@@ -1,4 +1,4 @@
-package com.lwh.jackknife.demo.jackknifeutil;
+package com.lwh.jackknife.demo.javatest;
 
 import com.lwh.jackknife.util.AC;
 

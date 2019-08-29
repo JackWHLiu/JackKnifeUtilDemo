@@ -27,5 +27,5 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     testImplementation 'com.github.JackWHLiu:jackknife:75a681cd6f'
-    androidTestImplementation 'com.github.JackWHLiu:jackknife:-SNAPSHOT'
+    androidTestImplementation 'com.github.JackWHLiu:jackknife:792c456e53'
 }

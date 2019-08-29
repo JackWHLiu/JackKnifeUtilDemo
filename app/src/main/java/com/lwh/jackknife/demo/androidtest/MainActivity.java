@@ -1,4 +1,4 @@
-package com.lwh.jackknife.demo.jackknifeutil;
+package com.lwh.jackknife.demo.androidtest;
 
 import androidx.appcompat.app.AppCompatActivity;
 
